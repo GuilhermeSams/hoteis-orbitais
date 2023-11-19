@@ -9,32 +9,33 @@ export default function Navbar() {
     return (
         <header>
             <nav>
-                <ul className="font-montserratAlt flex h-20 items-center justify-around px-12 font-bold text-[#2D3648]">
+                <ul className="font-montserratAlt flex h-20 items-center justify-between px-8 font-bold text-[#2D3648]">
                     <ul>
                         <li className="">
                             <Link
-                                className="rounded-[4px] bg-[#2D3648] px-6 py-4 text-xl text-white"
+                                className="rounded-[4px] bg-[#2D3648]  px-6 py-4 text-xl text-white "
                                 href={'/'}
+                                style={{ whiteSpace: 'nowrap' }}
                             >
                                 HOTÉIS ORBITAIS
                             </Link>
                         </li>
                     </ul>
-                    <ul className="flex items-center gap-12">
+                    <ul
+                        style={{ whiteSpace: 'nowrap' }}
+                        className="flex items-center gap-7 text-sm max-[838px]:gap-4"
+                    >
                         <li>
-                            <Link href={'#'}>Faça uma reserva</Link>
+                            <Link href={'#'}>Reserve</Link>
                         </li>
                         <li>
                             <Link href={'#'}>Ofertas</Link>
                         </li>
                         <li>
-                            <Link href={'#'}>Hotéis espaciais</Link>
+                            <Link href={'#'}>Hotéis</Link>
                         </li>
                         <li>
                             <Link href={'#'}>Sobre-nos</Link>
-                        </li>
-                        <li>
-                            <Link href={'#'}>FAQ</Link>
                         </li>
                         <li>
                             {!user.isSignedIn && (

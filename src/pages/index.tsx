@@ -2,6 +2,7 @@ import Head from 'next/head'
 import NavBar from '../components/Navbar'
 import Image from 'next/image'
 import img_banner from '../../public/img_banner.jpg'
+import { KoulenFont } from '../lib/fonts'
 
 export default function Home() {
     return (
@@ -21,9 +22,16 @@ export default function Home() {
                             fill
                             priority={true}
                             style={{
-                                objectFit: 'fill',
+                                objectFit: 'cover',
                             }}
                         />
+                    </div>
+                    <div className="ml-20 pt-32">
+                        <div className={KoulenFont.className}>
+                            <h1 className="text-5xl text-white">
+                                INICIE SUA ESTADIA <br /> ESPACIAL AGORA
+                            </h1>
+                        </div>
                     </div>
                 </section>
             </main>
