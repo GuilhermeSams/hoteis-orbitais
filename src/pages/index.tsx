@@ -3,6 +3,7 @@ import NavBar from '../components/Navbar'
 import Image from 'next/image'
 import img_banner from '../../public/img_banner.jpg'
 import { KoulenFont } from '../lib/fonts'
+import { InterFont } from '../lib/fonts'
 import { CalendarForm } from '~/components/CalendarUi'
 import { useState, useEffect } from 'react'
 
@@ -53,6 +54,15 @@ export default function Home() {
                             </h1>
                         </div>
                         <CalendarForm />
+                        <div className={`${InterFont.className} pt-8 `}>
+                            <p className="max-w-xl font-bold	text-white max-[599px]:px-6 max-[599px]:text-center">
+                                Oferecemos a você a oportunidade de viajar com
+                                confiança. Um hotel espacial à sua espera. As
+                                férias dos seus sonhos estão a apenas alguns
+                                clicks e a sua segurança é a nossa prioridade
+                                número um.
+                            </p>
+                        </div>
                     </div>
                 </section>
             </main>
