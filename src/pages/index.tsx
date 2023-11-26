@@ -3,6 +3,7 @@ import NavBar from '../components/Navbar'
 import Image from 'next/image'
 import img_banner from '../../public/img_banner.jpg'
 import { KoulenFont } from '../lib/fonts'
+import { CalendarForm } from '~/components/CalendarUi'
 
 export default function Home() {
     return (
@@ -28,10 +29,11 @@ export default function Home() {
                     </div>
                     <div className="ml-20 pt-32">
                         <div className={KoulenFont.className}>
-                            <h1 className="text-5xl text-white">
+                            <h1 className="text-7xl text-white max-[1036px]:text-5xl">
                                 INICIE SUA ESTADIA <br /> ESPACIAL AGORA
                             </h1>
                         </div>
+                        <CalendarForm />
                     </div>
                 </section>
             </main>
