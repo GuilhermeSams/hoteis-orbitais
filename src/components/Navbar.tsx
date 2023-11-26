@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { SignInButton, useUser } from '@clerk/nextjs'
 import { SignOutButton } from '@clerk/nextjs'
 import { Button } from '../components/components-ui/ui/button'
+import { DropdownMenuDemo } from '../components/menuBurguer'
 
 export default function Navbar() {
     const user = useUser()
@@ -21,9 +22,12 @@ export default function Navbar() {
                             </Link>
                         </li>
                     </ul>
+                    <div className="absolute right-0 mr-8 sm:hidden">
+                        <DropdownMenuDemo />
+                    </div>
                     <ul
                         style={{ whiteSpace: 'nowrap' }}
-                        className="flex items-center gap-7 text-sm max-[838px]:gap-4"
+                        className="flex items-center gap-7 text-sm max-[838px]:gap-4 max-[640px]:hidden"
                     >
                         <li>
                             <Link href={'#'}>Reserve</Link>

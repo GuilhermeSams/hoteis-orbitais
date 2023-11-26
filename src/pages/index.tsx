@@ -4,8 +4,24 @@ import Image from 'next/image'
 import img_banner from '../../public/img_banner.jpg'
 import { KoulenFont } from '../lib/fonts'
 import { CalendarForm } from '~/components/CalendarUi'
+import { useState, useEffect } from 'react'
 
 export default function Home() {
+    const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 780)
+        }
+
+        window.addEventListener('resize', handleResize)
+
+        handleResize()
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
     return (
         <>
             <Head>
@@ -24,12 +40,15 @@ export default function Home() {
                             priority={true}
                             style={{
                                 objectFit: 'cover',
+                                filter: isSmallScreen
+                                    ? 'brightness(0.5)'
+                                    : 'none',
                             }}
                         />
                     </div>
-                    <div className="ml-20 pt-32">
+                    <div className="ml-20 pt-32 max-[599px]:ml-0 max-[599px]:flex max-[599px]:flex-col max-[599px]:items-center">
                         <div className={KoulenFont.className}>
-                            <h1 className="text-7xl text-white max-[1036px]:text-5xl">
+                            <h1 className="text-7xl text-white max-[1036px]:text-5xl max-[350px]:text-4xl">
                                 INICIE SUA ESTADIA <br /> ESPACIAL AGORA
                             </h1>
                         </div>

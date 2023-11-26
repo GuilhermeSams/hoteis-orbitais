@@ -54,7 +54,7 @@ export function CalendarForm() {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="mt-4 flex items-center"
+                className="mt-4 flex flex-wrap items-center max-[599px]:justify-center"
             >
                 <FormField
                     control={form.control}
@@ -67,7 +67,7 @@ export function CalendarForm() {
                                         <Button
                                             variant={'outline'}
                                             className={cn(
-                                                'w-[190px] rounded-l-[6px] rounded-r-none pl-3 text-left font-normal',
+                                                'w-[190px] rounded-l-[6px] rounded-r-none pl-3 text-left font-normal max-[310px]:rounded',
                                                 !field.value &&
                                                     'text-muted-foreground'
                                             )}
@@ -101,12 +101,13 @@ export function CalendarForm() {
                         </FormItem>
                     )}
                 />
-                <Input className="w-20 rounded-none" />
-                <div className=" flex h-10 items-center bg-white pr-4">
+                <div className=" flex h-10 items-center bg-white pr-4 max-[438px]:rounded-r-[6px] max-[310px]:rounded-l-[6px] max-[310px]:rounded-r-none">
+                    <Input className="w-20" />
+
                     <UserPlus className="" color="black" size={24} />
                 </div>
                 <Button
-                    className="w-32 rounded-l-none rounded-r-[6px] hover:bg-[#535E73]"
+                    className="w-32 rounded-l-none rounded-r-[6px] hover:bg-[#535E73] max-[438px]:rounded-l-[6px] max-[310px]:rounded-l-none"
                     type="submit"
                 >
                     Reserve
