@@ -2,10 +2,15 @@ import Head from 'next/head'
 import NavBar from '../components/Navbar'
 import Image from 'next/image'
 import img_banner from '../../public/img_banner.jpg'
+import img_orbit_planet from '../../public/orbit_planet.png'
 import { KoulenFont } from '../lib/fonts'
 import { InterFont } from '../lib/fonts'
 import { CalendarForm } from '~/components/CalendarUi'
 import { useState, useEffect } from 'react'
+import CardImageDescription from '../components/CardImageDescription'
+import stars_img from '../../public/5_stars.png'
+import gravitation from '../../public/gravitation_img.png'
+import astronaut from '../../public/astronaut_img.png'
 
 export default function Home() {
     const [isSmallScreen, setIsSmallScreen] = useState(false)
@@ -31,8 +36,8 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <NavBar />
-            <main className="min-h-screen">
-                <section className="relative">
+            <main className="h-[75vh]">
+                <section className="relative h-[43vh]">
                     <div className="absolute z-[-1] h-[75vh] w-screen max-w-full">
                         <Image
                             alt="img_rocket"
@@ -49,19 +54,43 @@ export default function Home() {
                     </div>
                     <div className="ml-20 pt-32 max-[599px]:ml-0 max-[599px]:flex max-[599px]:flex-col max-[599px]:items-center">
                         <div className={KoulenFont.className}>
-                            <h1 className="text-7xl text-white max-[1036px]:text-5xl max-[350px]:text-4xl">
+                            <h1 className=" text-7xl text-white max-[1036px]:text-5xl  max-[350px]:text-4xl">
                                 INICIE SUA ESTADIA <br /> ESPACIAL AGORA
                             </h1>
                         </div>
                         <CalendarForm />
                         <div className={`${InterFont.className} pt-8 `}>
-                            <p className="max-w-xl font-bold	text-white max-[599px]:px-6 max-[599px]:text-center">
+                            <p className="max-w-xl animate-pulse font-bold text-white max-[599px]:px-6 max-[599px]:text-center">
                                 Oferecemos a você a oportunidade de viajar com
                                 confiança. Um hotel espacial à sua espera. As
                                 férias dos seus sonhos estão a apenas alguns
                                 clicks e a sua segurança é a nossa prioridade
                                 número um.
                             </p>
+                        </div>
+                    </div>
+                    <div className="transforms absolute -bottom-full left-1/2 -translate-x-1/2 max-[690px]:hidden">
+                        <div className="mx-auto flex max-w-full gap-x-28 max-[1170px]:gap-x-16 max-[948px]:gap-x-11 max-[815px]:gap-6">
+                            <CardImageDescription
+                                src={img_orbit_planet}
+                                alt="img_orbit_planet"
+                                text="Uma estadia segura em orbita"
+                            />
+                            <CardImageDescription
+                                src={stars_img}
+                                alt="stars"
+                                text="Restaurantes incríveis"
+                            />
+                            <CardImageDescription
+                                src={gravitation}
+                                alt="img_gravitation"
+                                text="Gravidade artificial"
+                            />
+                            <CardImageDescription
+                                src={astronaut}
+                                alt="img_astronaut"
+                                text="Sala de gravidade 0"
+                            />
                         </div>
                     </div>
                 </section>

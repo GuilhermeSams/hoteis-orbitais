@@ -60,7 +60,7 @@ export function CalendarForm() {
                     control={form.control}
                     name="dob"
                     render={({ field }) => (
-                        <FormItem className="flex flex-col">
+                        <FormItem className="relative flex flex-col">
                             <Popover>
                                 <PopoverTrigger asChild>
                                     <FormControl>
@@ -97,14 +97,19 @@ export function CalendarForm() {
                                     />
                                 </PopoverContent>
                             </Popover>
-                            <FormMessage />
+                            <FormMessage className="absolute -bottom-5 max-[438px]:bottom-10" />
                         </FormItem>
                     )}
                 />
                 <div className=" flex h-10 items-center bg-white pr-4 max-[438px]:rounded-r-[6px] max-[310px]:rounded-l-[6px] max-[310px]:rounded-r-none">
                     <Input className="w-20" />
 
-                    <UserPlus className="" color="black" size={24} />
+                    <UserPlus
+                        className=""
+                        color="black"
+                        size={24}
+                        opacity={0.3}
+                    />
                 </div>
                 <Button
                     className="w-32 rounded-l-none rounded-r-[6px] hover:bg-[#535E73] max-[438px]:rounded-l-[6px] max-[310px]:rounded-l-none"
