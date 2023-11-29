@@ -30,16 +30,36 @@ export default function Navbar() {
                         className="flex items-center gap-7 text-sm max-[838px]:gap-4 max-[640px]:hidden"
                     >
                         <li>
-                            <Link href={'#'}>Reserve</Link>
+                            <Link
+                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
+                                href={'#'}
+                            >
+                                Reserve
+                            </Link>
                         </li>
                         <li>
-                            <Link href={'#'}>Ofertas</Link>
+                            <Link
+                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
+                                href={'#'}
+                            >
+                                Ofertas
+                            </Link>
                         </li>
                         <li>
-                            <Link href={'#'}>Hotéis</Link>
+                            <Link
+                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
+                                href={'#'}
+                            >
+                                Hotéis
+                            </Link>
                         </li>
                         <li>
-                            <Link href={'#'}>Sobre-nos</Link>
+                            <Link
+                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
+                                href={'#'}
+                            >
+                                Sobre-nos
+                            </Link>
                         </li>
                         <li>
                             {!user.isSignedIn && (
