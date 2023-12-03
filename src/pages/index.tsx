@@ -11,7 +11,8 @@ import CardImageDescription from '../components/CardImageDescription'
 import stars_img from '../../public/5_stars.png'
 import gravitation from '../../public/gravitation_img.png'
 import astronaut from '../../public/astronaut_img.png'
-import ufo from '../../public/ufo.png'
+import CountUp from 'react-countup'
+import { CounterFont } from '../lib/fonts'
 
 export default function Home() {
     const [isSmallScreen, setIsSmallScreen] = useState(false)
@@ -182,6 +183,45 @@ export default function Home() {
                                     elaborados por chefs renomados, enquanto
                                     aprecia a vista deslumbrante da Terra.
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="h-screen px-8 pt-40">
+                    <div className="mx-auto flex h-56 max-w-5xl items-center justify-center rounded-[8px] outline outline-2  outline-offset-8">
+                        <div className="flex h-full w-full justify-center rounded-[8px] bg-[#2D3648]">
+                            <div
+                                className={`${CounterFont.className} grid grid-cols-3 items-center divide-x text-center text-white`}
+                            >
+                                <div className="flex flex-none flex-col pr-8">
+                                    <CountUp
+                                        className="text-7xl max-[750px]:text-5xl"
+                                        enableScrollSpy={true}
+                                        end={458}
+                                    />
+                                    <span className="text-xl">Voos</span>
+                                </div>
+                                <div className="flex shrink flex-col">
+                                    <CountUp
+                                        className="text-7xl font-light max-[750px]:text-5xl"
+                                        enableScrollSpy={true}
+                                        end={5496}
+                                    />
+                                    <span className="text-xl">
+                                        {' '}
+                                        Passageiros
+                                    </span>
+                                </div>
+                                <div className="flex flex-none flex-col pl-8">
+                                    <CountUp
+                                        className="text-7xl max-[750px]:text-5xl"
+                                        enableScrollSpy={true}
+                                        end={31}
+                                    />
+                                    <span className="text-xl">
+                                        Anos no mercado
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
