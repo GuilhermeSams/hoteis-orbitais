@@ -8,7 +8,7 @@ type infoCard = {
 
 export default function CardImageDescription(props: infoCard) {
     return (
-        <div className="mt-8 w-[150px] rounded-lg border-[1px] border-[#2D3648] bg-white shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
+        <div className="w-[150px] rounded-lg border-[1px] border-[#2D3648] bg-white shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
             <Image
                 alt={props.alt}
                 src={props.src}

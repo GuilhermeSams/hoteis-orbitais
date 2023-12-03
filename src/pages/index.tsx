@@ -11,6 +11,7 @@ import CardImageDescription from '../components/CardImageDescription'
 import stars_img from '../../public/5_stars.png'
 import gravitation from '../../public/gravitation_img.png'
 import astronaut from '../../public/astronaut_img.png'
+import ufo from '../../public/ufo.png'
 
 export default function Home() {
     const [isSmallScreen, setIsSmallScreen] = useState(false)
@@ -54,7 +55,7 @@ export default function Home() {
                     </div>
                     <div className="ml-20 pt-32 max-[599px]:ml-0 max-[599px]:flex max-[599px]:flex-col max-[599px]:items-center">
                         <div className={KoulenFont.className}>
-                            <h1 className=" text-7xl text-white max-[1036px]:text-5xl  max-[350px]:text-4xl ">
+                            <h1 className=" text-7xl text-white  max-[1036px]:text-5xl  max-[350px]:text-4xl ">
                                 INICIE SUA ESTADIA <br /> ESPACIAL AGORA
                             </h1>
                         </div>
@@ -96,7 +97,7 @@ export default function Home() {
                 </section>
             </div>
             <div className="h-screen">
-                <div className="mx-auto flex max-w-full flex-wrap justify-center gap-x-2 min-[690px]:hidden">
+                <div className="mx-auto mt-12 flex max-w-full flex-wrap justify-center gap-5 min-[690px]:hidden">
                     <CardImageDescription
                         src={img_orbit_planet}
                         alt="img_orbit_planet"
@@ -118,61 +119,70 @@ export default function Home() {
                         text="Sala de gravidade 0"
                     />
                 </div>
-                <div className="mx-8 pt-40 max-[690px]:pt-20">
-                    <div className="mx-auto max-w-4xl rounded-[8px] bg-[#4A5468] px-6 py-8 text-white">
-                        <div>
-                            <h2 className="text-2xl font-bold">
-                                Você está a um passo de Viajar para o espaço
-                            </h2>
-                            <p className="font-bold text-[#CBD2E0]">
-                                Prepare-se para uma experiência que vai além da
-                                sua imaginação - uma estadia verdadeiramente
-                                única nas alturas do espaço. Nosso hotel em
-                                órbita da Terra é mais do que uma acomodação; é
-                                uma jornada mágica em si mesma. Bem-vindo a um
-                                lugar onde o horizonte é apenas o começo.
-                            </p>
-                        </div>
-                        <div>
-                            <h2 className="text-2xl font-bold">
-                                Viva a Magia do Espaço
-                            </h2>
-                            <p className="font-bold text-[#CBD2E0]">
-                                Imagine acordar todas as manhãs com a Terra
-                                vista de um ângulo que poucos tiveram o
-                                privilégio de presenciar. Nossos quartos
-                                oferecem vistas panorâmicas deslumbrantes, com
-                                janelas amplas que mostram a beleza do nosso
-                                planeta em todo o seu esplendor. Assista ao
-                                nascer do sol no espaço sideral e desfrute de
-                                noites estreladas que nunca terminam.
-                            </p>
-                        </div>
-                        <div>
-                            <h2 className="text-2xl font-bold">
-                                Luxo Além das Estrelas
-                            </h2>
-                            <p className="font-bold text-[#CBD2E0]">
-                                Nossos hotéis é uma fusão de sofisticação e
-                                conforto, projetado para atender às suas
-                                necessidades mais exigentes. De suítes espaçosas
-                                a amenidades de última geração, cada detalhe foi
-                                cuidadosamente planejado para garantir que sua
-                                estadia seja uma experiência de classe mundial.
-                            </p>
-                        </div>
-                        <div>
-                            <h2 className="text-2xl font-bold">
-                                Gastronomia Celestial
-                            </h2>
-                            <p className="font-bold text-[#CBD2E0]">
-                                Nossos restaurantes oferecem uma culinária
-                                celestial que combina o melhor da gastronomia
-                                terrestre com toques de inovação inspirados no
-                                espaço. Saboreie pratos elaborados por chefs
-                                renomados, enquanto aprecia a vista deslumbrante
-                                da Terra.
-                            </p>
+                <div className="flex items-end justify-center pt-40  max-[690px]:pt-20">
+                    <div className="relative w-full  bg-[#4A5468] ">
+                        <div className="absolute -top-[3.12rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-[#4A5468] border-t-transparent"></div>
+                        <div className="absolute -bottom-[3.13rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-white border-t-transparent"></div>
+                        <div className="absolute -top-[3.12rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-[#4A5468] border-t-transparent"></div>
+                        <div className="absolute -bottom-[3.13rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-white border-t-transparent"></div>
+                        <div className=" mx-auto max-w-4xl space-y-8 rounded-[8px] px-6 py-16 text-white">
+                            <div>
+                                <h2 className="text-2xl font-bold">
+                                    Você está a um passo de Viajar para o espaço
+                                </h2>
+                                <p className="font-bold text-[#CBD2E0]">
+                                    Prepare-se para uma experiência que vai além
+                                    da sua imaginação - uma estadia
+                                    verdadeiramente única nas alturas do espaço.
+                                    Nosso hotel em órbita da Terra é mais do que
+                                    uma acomodação; é uma jornada mágica em si
+                                    mesma. Bem-vindo a um lugar onde o horizonte
+                                    é apenas o começo.
+                                </p>
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold">
+                                    Viva a Magia do Espaço
+                                </h2>
+                                <p className="font-bold text-[#CBD2E0]">
+                                    Imagine acordar todas as manhãs com a Terra
+                                    vista de um ângulo que poucos tiveram o
+                                    privilégio de presenciar. Nossos quartos
+                                    oferecem vistas panorâmicas deslumbrantes,
+                                    com janelas amplas que mostram a beleza do
+                                    nosso planeta em todo o seu esplendor.
+                                    Assista ao nascer do sol no espaço sideral e
+                                    desfrute de noites estreladas que nunca
+                                    terminam.
+                                </p>
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold">
+                                    Luxo Além das Estrelas
+                                </h2>
+                                <p className="font-bold text-[#CBD2E0]">
+                                    Nossos hotéis é uma fusão de sofisticação e
+                                    conforto, projetado para atender às suas
+                                    necessidades mais exigentes. De suítes
+                                    espaçosas a amenidades de última geração,
+                                    cada detalhe foi cuidadosamente planejado
+                                    para garantir que sua estadia seja uma
+                                    experiência de classe mundial.
+                                </p>
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold">
+                                    Gastronomia Celestial
+                                </h2>
+                                <p className="font-bold text-[#CBD2E0]">
+                                    Nossos restaurantes oferecem uma culinária
+                                    celestial que combina o melhor da
+                                    gastronomia terrestre com toques de inovação
+                                    inspirados no espaço. Saboreie pratos
+                                    elaborados por chefs renomados, enquanto
+                                    aprecia a vista deslumbrante da Terra.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
