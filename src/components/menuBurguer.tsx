@@ -29,6 +29,7 @@ export function DropdownMenuDemo() {
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Menu
+                    size={30}
                     onClick={toggleDropdown}
                     className="cursor-pointer text-right"
                 />

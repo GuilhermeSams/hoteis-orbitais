@@ -14,7 +14,7 @@ export default function Navbar() {
                     <ul>
                         <li className="">
                             <Link
-                                className="rounded-[4px] bg-[#2D3648]  px-6 py-4 text-xl text-white "
+                                className="rounded-[4px] bg-[#2D3648]  px-6 py-3 text-xl text-white "
                                 href={'/'}
                                 style={{ whiteSpace: 'nowrap' }}
                             >
