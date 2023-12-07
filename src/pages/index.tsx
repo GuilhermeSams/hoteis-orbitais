@@ -187,39 +187,43 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="h-screen px-8 pt-40">
-                    <div className="mx-auto flex h-56 max-w-5xl items-center justify-center rounded-[8px] outline outline-2  outline-offset-8">
+                <div className="h-screen px-8 pt-40 max-[450px]:px-16">
+                    <div className="mx-auto flex h-56 max-w-5xl  items-center justify-center rounded-[8px] outline outline-2  outline-offset-8 max-[450px]:h-1/2">
                         <div className="flex h-full w-full justify-center rounded-[8px] bg-[#2D3648]">
                             <div
-                                className={`${CounterFont.className} grid grid-cols-3 items-center divide-x text-center text-white`}
+                                className={`${CounterFont.className} flex w-full items-center justify-evenly text-center text-white max-[450px]:flex-col`}
                             >
-                                <div className="flex flex-none flex-col pr-8">
+                                <div className="flex flex-none flex-col max-[450px]:pb-2 max-[450px]:pt-4">
                                     <CountUp
-                                        className="text-7xl max-[750px]:text-5xl"
+                                        className="text-7xl max-[750px]:text-5xl max-[450px]:text-3xl"
                                         enableScrollSpy={true}
                                         end={458}
                                     />
-                                    <span className="text-xl">Voos</span>
+                                    <span className="text-xl max-[450px]:text-sm">
+                                        Voos
+                                    </span>
                                 </div>
-                                <div className="flex shrink flex-col">
+                                <div className="h-[40%] border-[1px] border-white"></div>
+                                <div className=" flex shrink flex-col max-[450px]:py-2">
                                     <CountUp
-                                        className="text-7xl font-light max-[750px]:text-5xl"
+                                        className="text-7xl  font-light max-[750px]:text-5xl max-[450px]:text-3xl"
                                         enableScrollSpy={true}
                                         end={5496}
                                     />
-                                    <span className="text-xl">
-                                        {' '}
+                                    <span className="text-xl max-[450px]:text-sm">
                                         Passageiros
                                     </span>
                                 </div>
-                                <div className="flex flex-none flex-col pl-8">
+                                <div className="h-[40%] border-[1px] border-white "></div>
+
+                                <div className="flex flex-none flex-col max-[450px]:pb-4 max-[450px]:pt-2">
                                     <CountUp
-                                        className="text-7xl max-[750px]:text-5xl"
+                                        className="text-7xl max-[750px]:text-5xl max-[450px]:text-3xl"
                                         enableScrollSpy={true}
                                         end={31}
                                     />
-                                    <span className="text-xl">
-                                        Anos no mercado
+                                    <span className="text-xl max-[450px]:text-sm">
+                                        Anos
                                     </span>
                                 </div>
                             </div>
