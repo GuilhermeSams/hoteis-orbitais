@@ -187,7 +187,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="h-screen px-8 pt-40 max-[450px]:px-16">
+                <div className="h-screen px-8 pt-[40px] max-[450px]:px-16">
                     <div className="mx-auto flex h-56 max-w-5xl  items-center justify-center rounded-[8px] outline outline-2  outline-offset-8 max-[450px]:h-1/2">
                         <div className="flex h-full w-full justify-center rounded-[8px] bg-[#2D3648]">
                             <div
