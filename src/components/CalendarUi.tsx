@@ -101,7 +101,7 @@ export function CalendarForm() {
                         </FormItem>
                     )}
                 />
-                <div className=" flex h-10 items-center bg-white pr-4 max-[438px]:rounded-r-[6px] max-[310px]:rounded-l-[6px] max-[310px]:rounded-r-none">
+                <div className=" flex h-10 items-center bg-white pr-4 max-[438px]:rounded-r-[6px] max-[310px]:mt-6 max-[310px]:rounded-l-[6px] max-[310px]:rounded-r-none">
                     <Input className="w-20" />
 
                     <UserPlus
@@ -112,7 +112,7 @@ export function CalendarForm() {
                     />
                 </div>
                 <Button
-                    className="w-32 rounded-l-none rounded-r-[6px] hover:bg-[#535E73] max-[438px]:rounded-l-[6px] max-[310px]:rounded-l-none"
+                    className="w-32 rounded-l-none rounded-r-[6px] bg-white text-black hover:bg-[#2D3648] hover:text-white max-[438px]:mt-6 max-[438px]:rounded-l-[6px] max-[310px]:rounded-l-none"
                     type="submit"
                 >
                     Reserve

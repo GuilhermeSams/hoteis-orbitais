@@ -49,7 +49,7 @@ export default function Home() {
                             style={{
                                 objectFit: 'cover',
                                 filter: isSmallScreen
-                                    ? 'brightness(0.5)'
+                                    ? 'brightness(0.3)'
                                     : 'none',
                             }}
                         />
@@ -61,8 +61,8 @@ export default function Home() {
                             </h1>
                         </div>
                         <CalendarForm />
-                        <div className={`${InterFont.className} pt-8 `}>
-                            <p className="max-w-xl animate-pulse font-bold text-white max-[599px]:px-6 max-[599px]:text-center">
+                        <div className={`${InterFont.className} pt-8`}>
+                            <p className="max-w-xl animate-pulse font-bold text-white max-[599px]:px-6 max-[599px]:text-center max-[470px]:animate-none max-[470px]:text-sm">
                                 Oferecemos a você a oportunidade de viajar com
                                 confiança. Um hotel espacial à sua espera. As
                                 férias dos seus sonhos estão a apenas alguns
