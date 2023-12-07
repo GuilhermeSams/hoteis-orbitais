@@ -40,7 +40,7 @@ export default function Home() {
             <NavBar />
             <div className="h-[75vh]">
                 <section className="relative h-[43vh]">
-                    <div className="absolute z-[-1] h-[75vh] w-screen max-w-full">
+                    <div className="absolute z-[-1] h-[80vh] w-screen max-w-full">
                         <Image
                             alt="img_rocket"
                             src={img_banner}
