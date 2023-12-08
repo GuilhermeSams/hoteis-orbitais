@@ -197,7 +197,7 @@ export default function Home() {
                             >
                                 <div className="flex flex-none flex-col max-[450px]:pb-2 max-[450px]:pt-4">
                                     <CountUp
-                                        className="text-7xl max-[750px]:text-5xl max-[450px]:text-3xl"
+                                        className="drop-shadow-glow text-7xl max-[750px]:text-5xl max-[450px]:text-3xl"
                                         enableScrollSpy={true}
                                         end={458}
                                     />
@@ -208,7 +208,7 @@ export default function Home() {
                                 <div className="h-[40%] border-[1px] border-white"></div>
                                 <div className=" flex shrink flex-col max-[450px]:py-2">
                                     <CountUp
-                                        className="text-7xl  font-light max-[750px]:text-5xl max-[450px]:text-3xl"
+                                        className="drop-shadow-glow  text-7xl font-light max-[750px]:text-5xl max-[450px]:text-3xl"
                                         enableScrollSpy={true}
                                         end={5496}
                                     />
@@ -220,7 +220,7 @@ export default function Home() {
 
                                 <div className="flex flex-none flex-col max-[450px]:pb-4 max-[450px]:pt-2">
                                     <CountUp
-                                        className="text-7xl max-[750px]:text-5xl max-[450px]:text-3xl"
+                                        className="drop-shadow-glow text-7xl max-[750px]:text-5xl max-[450px]:text-3xl"
                                         enableScrollSpy={true}
                                         end={31}
                                     />
