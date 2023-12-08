@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import NavBar from '../components/Navbar'
 import Image from 'next/image'
-import img_banner from '../../public/img_banner.jpg'
+import img_banner from '../../public/bg_home.png'
 import img_orbit_planet from '../../public/orbit_planet.png'
 import { KoulenFont } from '../lib/fonts'
 import { InterFont } from '../lib/fonts'
@@ -40,7 +40,7 @@ export default function Home() {
             <NavBar />
             <div className="h-[75vh]">
                 <section className="relative h-[43vh]">
-                    <div className="absolute z-[-1] h-[80vh] w-screen max-w-full">
+                    <div className="absolute z-[-1] h-[75vh] w-screen max-w-full max-[425px]:h-[93svh]">
                         <Image
                             alt="img_rocket"
                             src={img_banner}
@@ -53,10 +53,12 @@ export default function Home() {
                                     : 'none',
                             }}
                         />
+                        <div className="absolute -bottom-[3.13rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-black border-t-transparent"></div>
+                        <div className="absolute -bottom-[3.13rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-black border-t-transparent"></div>
                     </div>
                     <div className="ml-20 pt-32 max-[599px]:ml-0 max-[599px]:flex max-[599px]:flex-col max-[599px]:items-center">
                         <div className={KoulenFont.className}>
-                            <h1 className=" text-7xl text-white  max-[1036px]:text-5xl  max-[350px]:text-4xl ">
+                            <h1 className=" drop-shadow-glow text-7xl  text-white  max-[1036px]:text-5xl max-[350px]:text-4xl">
                                 INICIE SUA ESTADIA <br /> ESPACIAL AGORA
                             </h1>
                         </div>
@@ -98,7 +100,7 @@ export default function Home() {
                 </section>
             </div>
             <div className="h-screen">
-                <div className="mx-auto mt-12 flex max-w-full flex-wrap justify-center gap-5 min-[690px]:hidden">
+                <div className="mx-auto mt-12 flex max-w-full flex-wrap justify-center gap-5 max-[425px]:mt-64 min-[690px]:hidden">
                     <CardImageDescription
                         src={img_orbit_planet}
                         alt="img_orbit_planet"
@@ -121,11 +123,11 @@ export default function Home() {
                     />
                 </div>
                 <div className="flex items-end justify-center pt-40  max-[690px]:pt-20">
-                    <div className="relative w-full  bg-[#4A5468] ">
-                        <div className="absolute -top-[3.12rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-[#4A5468] border-t-transparent"></div>
-                        <div className="absolute -bottom-[3.13rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-white border-t-transparent"></div>
-                        <div className="absolute -top-[3.12rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-[#4A5468] border-t-transparent"></div>
-                        <div className="absolute -bottom-[3.13rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-white border-t-transparent"></div>
+                    <div className="relative w-full  bg-black">
+                        <div className="absolute -top-[3.12rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-black border-t-transparent"></div>
+                        <div className="absolute -bottom-[3.13rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-black border-t-transparent"></div>
+                        <div className="absolute -top-[3.12rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-black border-t-transparent"></div>
+                        <div className="absolute -bottom-[3.13rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-black border-t-transparent"></div>
                         <div className=" mx-auto max-w-4xl space-y-8 rounded-[8px] px-6 py-16 text-white">
                             <div>
                                 <h2 className="text-2xl font-bold">
