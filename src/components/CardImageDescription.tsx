@@ -12,7 +12,7 @@ export default function CardImageDescription(props: infoCard) {
             <Image
                 alt={props.alt}
                 src={props.src}
-                className="rounded-t-lg border-b-[1px] border-[#2D3648] bg-[#EDF0F7]"
+                className="rounded-t-lg border-b-[1px] border-[#2D3648] bg-[#EDF0F7] "
                 priority={true}
                 style={{
                     objectFit: 'contain',

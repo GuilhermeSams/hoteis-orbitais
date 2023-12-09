@@ -90,7 +90,6 @@ export function CalendarForm() {
                                         selected={field.value}
                                         onSelect={field.onChange}
                                         disabled={(date) =>
-                                            date > new Date() ||
                                             date < new Date('1900-01-01')
                                         }
                                         initialFocus
@@ -102,7 +101,7 @@ export function CalendarForm() {
                     )}
                 />
                 <div className=" flex h-10 items-center bg-white pr-4 max-[438px]:rounded-r-[6px] max-[310px]:mt-6 max-[310px]:rounded-l-[6px] max-[310px]:rounded-r-none">
-                    <Input className="w-20" />
+                    <Input className="w-20" type="number" />
 
                     <UserPlus
                         className=""
