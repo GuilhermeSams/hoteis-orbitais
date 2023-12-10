@@ -192,8 +192,8 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="h-screen px-8 pt-[40px] max-[450px]:px-16">
-                    <div className="mx-auto flex h-56 max-w-5xl  items-center justify-center rounded-[8px] outline outline-2  outline-offset-8 max-[450px]:h-1/2">
+                <div className=" px-8 pt-20 max-[450px]:px-16">
+                    <div className="mx-auto flex h-56 max-w-5xl  items-center justify-center rounded-[8px] outline outline-2  outline-offset-8 max-[450px]:h-full">
                         <div className="flex h-full w-full justify-center rounded-[8px] bg-[#2D3648]">
                             <div
                                 className={`${CounterFont.className} flex w-full items-center justify-evenly text-center text-white max-[450px]:flex-col`}
@@ -208,7 +208,7 @@ export default function Home() {
                                         Voos
                                     </span>
                                 </div>
-                                <div className="h-[40%] border-[1px] border-white"></div>
+                                <div className="h-[90px] border-[1px] border-white max-[450px]:h-[40px]"></div>
                                 <div className=" flex shrink flex-col max-[450px]:py-2 ">
                                     <CountUp
                                         className="text-7xl  font-light drop-shadow-glow max-[750px]:text-5xl max-[450px]:text-3xl "
@@ -219,7 +219,7 @@ export default function Home() {
                                         Passageiros
                                     </span>
                                 </div>
-                                <div className="h-[40%] border-[1px] border-white "></div>
+                                <div className="h-[90px] border-[1px] border-white max-[450px]:h-[40px]"></div>
 
                                 <div className="flex flex-none flex-col max-[450px]:pb-4 max-[450px]:pt-2">
                                     <CountUp
@@ -233,6 +233,21 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className={`${InterFont.className} mt-32 h-screen`}>
+                    <div className="space-y-4 text-center">
+                        <h2 className="text-2xl">
+                            Feedback de nossos clientes
+                        </h2>
+                        <h2 className="text-4xl font-extrabold text-[#3a5283]">
+                            Entenda porque a nossa empresa se destaca
+                        </h2>
+                        <p className="mx-auto max-w-xl text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Alias tempora praesentium reprehenderit
+                            tempore corrupti omni.
+                        </p>
                     </div>
                 </div>
             </div>
