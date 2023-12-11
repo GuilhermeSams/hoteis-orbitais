@@ -253,7 +253,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="h-screen bg-gradient-to-t from-white via-[#FAFAFA] to-white">
-                    <div className="flex items-center justify-evenly p-12 max-[1200px]:flex-col-reverse">
+                    <div className="flex items-center justify-evenly px-4 max-[1200px]:flex-col-reverse">
                         <div
                             className={`${InterFont.className} space-y-6 pt-12`}
                         >
