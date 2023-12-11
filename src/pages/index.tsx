@@ -3,6 +3,7 @@ import NavBar from '../components/Navbar'
 import Image from 'next/image'
 import img_banner from '../../public/bg_home.png'
 import img_orbit_planet from '../../public/orbit_planet.png'
+import rocket_lauch_faq from '../../public/rocket-launch.png'
 import { KoulenFont } from '../lib/fonts'
 import { InterFont } from '../lib/fonts'
 import { CalendarForm } from '~/components/CalendarUi'
@@ -13,6 +14,7 @@ import gravitation from '../../public/gravitation_img.png'
 import astronaut from '../../public/astronaut_img.png'
 import CountUp from 'react-countup'
 import { CounterFont } from '../lib/fonts'
+import Faq from '~/components/Faq'
 
 export default function Home() {
     const [isSmallScreen, setIsSmallScreen] = useState(false)
@@ -235,19 +237,45 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className={`${InterFont.className} mt-32 h-screen`}>
+                <div className={`${InterFont.className} mt-32 h-[50vh]`}>
                     <div className="space-y-4 text-center">
-                        <h2 className="text-2xl">
+                        <h2 className="text-2xl max-[555px]:text-xl">
                             Feedback de nossos clientes
                         </h2>
-                        <h2 className="text-4xl font-extrabold text-[#3a5283]">
+                        <h2 className="px-4 text-4xl font-extrabold text-[#3a5283] max-[555px]:text-3xl">
                             Entenda porque a nossa empresa se destaca
                         </h2>
-                        <p className="mx-auto max-w-xl text-sm">
+                        <p className="mx-auto max-w-xl px-4 text-sm ">
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Alias tempora praesentium reprehenderit
                             tempore corrupti omni.
                         </p>
+                    </div>
+                </div>
+                <div className="h-screen bg-gradient-to-t from-white via-[#FAFAFA] to-white">
+                    <div className="flex items-center justify-evenly p-12 max-[1200px]:flex-col-reverse">
+                        <div
+                            className={`${InterFont.className} space-y-6 pt-12`}
+                        >
+                            <h2 className=" text-4xl font-extrabold">FAQ</h2>
+                            <p className="max-w-2xl">
+                                Explore abaixo algumas das perguntas mais comuns
+                                que recebemos. Se você não encontrar a resposta
+                                que procura, não hesite em entrar em contato
+                                conosco.
+                            </p>
+                            <Faq />
+                        </div>
+                        <div className="w-1/3 max-[1200px]:w-3/4">
+                            <Image
+                                alt="img rocket launch"
+                                src={rocket_lauch_faq}
+                                priority={true}
+                                style={{
+                                    objectFit: 'cover',
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
