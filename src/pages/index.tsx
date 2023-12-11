@@ -252,13 +252,13 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                <div className="h-screen bg-gradient-to-t from-white via-[#FAFAFA] to-white">
+                <div className=" h-screen bg-gradient-to-t from-white via-[#FAFAFA] to-white">
                     <div className="flex items-center justify-evenly px-4 max-[1200px]:flex-col-reverse">
                         <div
                             className={`${InterFont.className} space-y-6 pt-12`}
                         >
                             <h2 className=" text-4xl font-extrabold">FAQ</h2>
-                            <p className="max-w-2xl">
+                            <p className="max-w-2xl max-[390px]:text-sm">
                                 Explore abaixo algumas das perguntas mais comuns
                                 que recebemos. Se você não encontrar a resposta
                                 que procura, não hesite em entrar em contato
@@ -266,7 +266,7 @@ export default function Home() {
                             </p>
                             <Faq />
                         </div>
-                        <div className="w-1/3 max-[1200px]:w-3/4">
+                        <div className=" w-1/3 max-[1200px]:w-3/4">
                             <Image
                                 alt="img rocket launch"
                                 src={rocket_lauch_faq}

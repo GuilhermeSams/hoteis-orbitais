@@ -13,7 +13,7 @@ export default function Faq() {
             collapsible
         >
             <AccordionItem value="item-1">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     1. O que é uma estadia espacial?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -24,7 +24,7 @@ export default function Faq() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     2. Quais as opções de órbita?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -35,7 +35,7 @@ export default function Faq() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     3. De onde parte o transporte para hotel?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -46,7 +46,7 @@ export default function Faq() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     4. Preciso de treinamento para ir?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -56,7 +56,7 @@ export default function Faq() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-5">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     5. Quais as atividades disponíveis?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -65,7 +65,7 @@ export default function Faq() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-6">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     6. Sou menor de idade, posso ir sozinho?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -74,7 +74,7 @@ export default function Faq() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-7">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     7. Existe naves para evacuação do hotel?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -83,7 +83,7 @@ export default function Faq() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-8">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     8. Tudo do serviço é incluso?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -93,7 +93,7 @@ export default function Faq() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-9">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     9. Posso cancelar a reserva?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -102,7 +102,7 @@ export default function Faq() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-10">
-                <AccordionTrigger>
+                <AccordionTrigger className="max-[390px]:text-sm">
                     10. Tem restrição de saúde para viajar?
                 </AccordionTrigger>
                 <AccordionContent>
