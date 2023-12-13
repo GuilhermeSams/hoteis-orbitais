@@ -15,6 +15,7 @@ import astronaut from '../../public/astronaut_img.png'
 import CountUp from 'react-countup'
 import { CounterFont } from '../lib/fonts'
 import Faq from '~/components/Faq'
+import Newslatter from '~/components/Newslatter'
 
 export default function Home() {
     const [isSmallScreen, setIsSmallScreen] = useState(false)
@@ -128,17 +129,17 @@ export default function Home() {
                     <div className="absolute left-[98.5%] top-5 h-32 border-[15px] border-black max-[690px]:hidden"></div>
                     <div className="absolute right-[98.5%] top-5 h-32 border-[15px] border-black max-[690px]:hidden"></div>
 
-                    <div className="relative w-full  bg-black">
-                        <div className="absolute -top-[3.12rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-black border-t-transparent"></div>
-                        <div className="absolute -bottom-[3.13rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-black border-t-transparent"></div>
-                        <div className="absolute -top-[3.12rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-black border-t-transparent"></div>
-                        <div className="absolute -bottom-[3.13rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-black border-t-transparent"></div>
+                    <div className="relative w-full  bg-gradient-to-t from-gray-500 via-gray-800 to-black">
+                        <div className="absolute -top-[3.12rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-[#010203] border-t-transparent"></div>
+                        <div className="absolute -bottom-[3.13rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-white border-t-transparent"></div>
+                        <div className="absolute -top-[3.12rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-[#010203] border-t-transparent"></div>
+                        <div className="absolute -bottom-[3.13rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-white border-t-transparent"></div>
                         <div className=" mx-auto max-w-4xl space-y-8 rounded-[8px] px-6 py-16 text-white">
                             <div>
                                 <h2 className="text-2xl font-bold">
                                     Você está a um passo de Viajar para o espaço
                                 </h2>
-                                <p className="font-bold text-[#CBD2E0]">
+                                <p className="mt-2 font-bold text-white">
                                     Prepare-se para uma experiência que vai além
                                     da sua imaginação - uma estadia
                                     verdadeiramente única nas alturas do espaço.
@@ -152,7 +153,7 @@ export default function Home() {
                                 <h2 className="text-2xl font-bold">
                                     Viva a Magia do Espaço
                                 </h2>
-                                <p className="font-bold text-[#CBD2E0]">
+                                <p className="mt-2 font-bold text-white">
                                     Imagine acordar todas as manhãs com a Terra
                                     vista de um ângulo que poucos tiveram o
                                     privilégio de presenciar. Nossos quartos
@@ -168,7 +169,7 @@ export default function Home() {
                                 <h2 className="text-2xl font-bold">
                                     Luxo Além das Estrelas
                                 </h2>
-                                <p className="font-bold text-[#CBD2E0]">
+                                <p className="mt-2 font-bold text-white">
                                     Nossos hotéis é uma fusão de sofisticação e
                                     conforto, projetado para atender às suas
                                     necessidades mais exigentes. De suítes
@@ -182,7 +183,7 @@ export default function Home() {
                                 <h2 className="text-2xl font-bold">
                                     Gastronomia Celestial
                                 </h2>
-                                <p className="font-bold text-[#CBD2E0]">
+                                <p className="mt-2 font-bold text-white">
                                     Nossos restaurantes oferecem uma culinária
                                     celestial que combina o melhor da
                                     gastronomia terrestre com toques de inovação
@@ -252,8 +253,8 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                <div className=" h-screen bg-gradient-to-t from-white via-[#FAFAFA] to-white">
-                    <div className="flex items-center justify-evenly px-4 max-[1200px]:flex-col-reverse">
+                <div className="mb-20 h-screen bg-gradient-to-t from-white via-[#FAFAFA] to-white">
+                    <div className=" flex items-center justify-evenly px-4 max-[1200px]:flex-col-reverse">
                         <div
                             className={`${InterFont.className} space-y-6 pt-12`}
                         >
@@ -275,6 +276,11 @@ export default function Home() {
                                     objectFit: 'cover',
                                 }}
                             />
+                        </div>
+                    </div>
+                    <div className="h-screen">
+                        <div>
+                            <Newslatter />
                         </div>
                     </div>
                 </div>
