@@ -6,9 +6,11 @@ import { InterFont } from '../lib/fonts'
 
 export default function Newslatter() {
     return (
-        <div className={`${InterFont.className} mx-40 text-center`}>
+        <div
+            className={`${InterFont.className} mx-40 mt-32 text-center max-[832px]:mx-5`}
+        >
             <div>
-                <h1 className="mb-10 bg-white text-2xl font-extrabold text-[#2D3648]">
+                <h1 className="mb-10 bg-white text-2xl font-extrabold text-[#2D3648] max-[555px]:text-xl">
                     INSCREVA-SE NO NOSSO
                     <br />
                     NEWSLATTER
@@ -27,11 +29,11 @@ export default function Newslatter() {
                             }}
                         />
                     </div>
-                    <h2 className="text-2xl text-white">
+                    <h2 className="text-2xl text-white max-[555px]:text-xl">
                         Receba noticias semanais
                     </h2>
                     <div>
-                        <form className="flex">
+                        <form className="mx-4 flex ">
                             <Input
                                 placeholder="Seu endereço de email"
                                 className="rounded-r-none"
@@ -41,7 +43,7 @@ export default function Newslatter() {
                             </Button>
                         </form>
                     </div>
-                    <p className="font-light text-gray-200">
+                    <p className="mx-4 font-light text-gray-200">
                         seu e-mail está seguro conosco, não enviamos spam
                     </p>
                 </div>

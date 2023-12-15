@@ -103,7 +103,7 @@ export default function Home() {
                 </section>
             </div>
             <div className="h-screen">
-                <div className="mx-auto mt-20 flex max-w-full flex-wrap justify-center gap-5 max-[425px]:mt-56 min-[690px]:hidden">
+                <div className="mx-auto mt-20 flex max-w-full flex-wrap justify-center gap-5 max-[425px]:mt-48 min-[690px]:hidden">
                     <CardImageDescription
                         src={img_orbit_planet}
                         alt="img_orbit_planet"
@@ -278,10 +278,15 @@ export default function Home() {
                             />
                         </div>
                     </div>
-                    <div className="h-screen">
+                    <div className="h-screen min-[1200px]:hidden">
                         <div>
                             <Newslatter />
                         </div>
+                    </div>
+                </div>
+                <div className="h-screen max-[1200px]:hidden">
+                    <div>
+                        <Newslatter />
                     </div>
                 </div>
             </div>
