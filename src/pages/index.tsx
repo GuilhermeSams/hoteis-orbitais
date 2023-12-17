@@ -33,22 +33,6 @@ export default function Home() {
         }
     }, [])
 
-    const [startValue, setStartValue] = useState(0)
-    const endValue = 5496
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setStartValue((prevValue) =>
-                prevValue < endValue ? prevValue + 1 : endValue
-            )
-        }, 1000)
-
-        return () => clearInterval(interval)
-    }, [endValue])
-
-    // Formatar o valor para exibir "0000"
-    const formattedStartValue = startValue.toString().padStart(4, '0')
-
     return (
         <div className="">
             <Head>
@@ -231,7 +215,7 @@ export default function Home() {
                                     <CountUp
                                         className="text-7xl  font-light drop-shadow-glow max-[750px]:text-5xl max-[450px]:text-3xl "
                                         enableScrollSpy={true}
-                                        end={endValue}
+                                        end={5496}
                                         start={0}
                                         separator=""
                                     />
