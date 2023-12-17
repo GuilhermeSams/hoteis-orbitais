@@ -54,7 +54,7 @@ export function CalendarForm() {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="mt-4 flex flex-wrap items-center max-[599px]:justify-center"
+                className="mt-16 flex flex-wrap items-center max-[599px]:justify-center"
             >
                 <FormField
                     control={form.control}
