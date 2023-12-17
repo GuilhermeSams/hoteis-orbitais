@@ -1,5 +1,6 @@
 import { type AppType } from 'next/app'
 import { ClerkProvider } from '@clerk/nextjs'
+import NavBar from '../components/Navbar'
 
 import { api } from '~/utils/api'
 
@@ -7,9 +8,12 @@ import '~/styles/globals.css'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
     return (
-        <ClerkProvider {...pageProps}>
-            <Component {...pageProps} />
-        </ClerkProvider>
+        <>
+            <ClerkProvider {...pageProps}>
+                <NavBar />
+                <Component {...pageProps} />
+            </ClerkProvider>
+        </>
     )
 }
 

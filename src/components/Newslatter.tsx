@@ -7,10 +7,10 @@ import { InterFont } from '../lib/fonts'
 export default function Newslatter() {
     return (
         <div
-            className={`${InterFont.className} mx-40 mt-32 text-center max-[832px]:mx-5`}
+            className={`${InterFont.className} mx-40 text-center max-[832px]:mx-5 max-[750px]:mt-72`}
         >
             <div>
-                <h1 className="mb-10 bg-white text-2xl font-extrabold text-[#2D3648] max-[555px]:text-xl">
+                <h1 className="mb-10 bg-white text-2xl font-extrabold text-[#2D3648] max-[555px]:text-xl ">
                     INSCREVA-SE NO NOSSO
                     <br />
                     NEWSLATTER
