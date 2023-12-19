@@ -3,6 +3,7 @@ import { SignInButton, useUser } from '@clerk/nextjs'
 import { SignOutButton } from '@clerk/nextjs'
 import { Button } from '../components/components-ui/ui/button'
 import { DropdownMenuDemo } from '../components/menuBurguer'
+import DropdownProfile from '../components/DropdawnProfile'
 
 export default function Navbar() {
     const user = useUser()
@@ -73,14 +74,9 @@ export default function Navbar() {
                                 </SignInButton>
                             )}
                             {!!user.isSignedIn && (
-                                <SignOutButton>
-                                    <Button
-                                        className="border-2 border-[#2D3648] hover:bg-[#2D3648] hover:text-white"
-                                        variant="outline"
-                                    >
-                                        Sair
-                                    </Button>
-                                </SignOutButton>
+                                <>
+                                    <DropdownProfile />
+                                </>
                             )}
                         </li>
                     </ul>
