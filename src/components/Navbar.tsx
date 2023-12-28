@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { SignInButton, useUser } from '@clerk/nextjs'
-import { SignOutButton } from '@clerk/nextjs'
 import { Button } from '../components/components-ui/ui/button'
 import { DropdownMenuDemo } from '../components/menuBurguer'
 import DropdownProfile from '../components/DropdawnProfile'
@@ -23,7 +22,7 @@ export default function Navbar() {
                             </Link>
                         </li>
                     </ul>
-                    <div className="absolute right-0 mr-8 sm:hidden">
+                    <div className="absolute right-0 mr-8 flex items-center gap-2 sm:hidden">
                         <DropdownMenuDemo />
                     </div>
                     <ul

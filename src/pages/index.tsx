@@ -138,7 +138,7 @@ export default function Home() {
                                 <h2 className="text-2xl font-bold">
                                     Você está a um passo de Viajar para o espaço
                                 </h2>
-                                <p className="mt-2 font-bold text-white">
+                                <p className="mt-2 font-bold text-white ">
                                     Prepare-se para uma experiência que vai além
                                     da sua imaginação - uma estadia
                                     verdadeiramente única nas alturas do espaço.

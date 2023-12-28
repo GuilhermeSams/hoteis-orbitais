@@ -11,24 +11,47 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '~/components/components-ui/ui/dropdown-menu'
-const { isSignedIn, user, isLoaded } = useUser()
+
+function GetName() {
+    const { isSignedIn, user } = useUser()
+    if (!isSignedIn) {
+        return null
+    }
+    return <span>{user.firstName}</span>
+}
+
+function GetImageUrlProfile() {
+    const { isSignedIn, user } = useUser()
+
+    if (!isSignedIn) {
+        return null
+    }
+
+    return user.imageUrl || null
+}
 
 export default function DropdownMenuDemo() {
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button
-                    className="bg-[#2D3648] font-bold text-white"
-                    variant="default"
-                >
-                    {user.fullName}
-                </Button>
-            </DropdownMenuTrigger>
+            <div className="flex flex-row-reverse">
+                <DropdownMenuTrigger asChild className="flex">
+                    <Button
+                        className="rounded-l-none bg-[#2D3648] font-bold text-white max-[640px]:hidden"
+                        variant="default"
+                    >
+                        {GetName()}
+                    </Button>
+                </DropdownMenuTrigger>
+                <div
+                    className="h-10 w-10 rounded-l-[8px] bg-contain bg-no-repeat"
+                    style={{ backgroundImage: `url(${GetImageUrlProfile()})` }}
+                ></div>
+            </div>
             <DropdownMenuContent className="mr-8 w-56">
                 <Link href={'/menage-profile'}>
                     <DropdownMenuItem>
                         <User className="mr-2 h-4 w-4" />
-                        <span>Gerenciar Perfil</span>
+                        <span className="">Gerenciar Perfil</span>
                     </DropdownMenuItem>
                 </Link>
                 <DropdownMenuSeparator />
