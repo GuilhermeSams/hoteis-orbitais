@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
     return (
-        <div className="mt-10 grid h-fit grid-flow-row grid-cols-2 place-items-center bg-[#1A202C] py-20 text-white max-[980px]:grid-cols-1">
+        <div className=" grid h-fit grid-flow-row grid-cols-2 place-items-center bg-[#1A202C] py-20 text-white max-[980px]:grid-cols-1">
             <div className="mb-8 self-end">
                 <Link
                     className="rounded-[4px] bg-[#2D3648]  px-6 py-3 text-xl text-white "

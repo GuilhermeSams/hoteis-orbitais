@@ -32,7 +32,7 @@ export default function Navbar() {
                         <li>
                             <Link
                                 className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
-                                href={'#'}
+                                href={'reserve'}
                             >
                                 Reserve
                             </Link>

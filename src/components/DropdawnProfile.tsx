@@ -34,9 +34,9 @@ export default function DropdownMenuDemo() {
     return (
         <DropdownMenu>
             <div className="flex flex-row-reverse">
-                <DropdownMenuTrigger asChild className="flex">
+                <DropdownMenuTrigger asChild className="flex ">
                     <Button
-                        className="rounded-l-none bg-[#2D3648] font-bold text-white max-[640px]:hidden"
+                        className="focus-visible: rounded-l-none bg-[#2D3648] font-bold text-white ring-offset-0 max-[640px]:hidden"
                         variant="default"
                     >
                         {GetName()}

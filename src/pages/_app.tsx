@@ -1,6 +1,6 @@
 import { type AppType } from 'next/app'
 import { ClerkProvider } from '@clerk/nextjs'
-import NavBar from '../components/Navbar'
+import Layout from '../components/layout'
 
 import { api } from '~/utils/api'
 
@@ -10,8 +10,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     return (
         <>
             <ClerkProvider {...pageProps}>
-                <NavBar />
-                <Component {...pageProps} />
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
             </ClerkProvider>
         </>
     )
