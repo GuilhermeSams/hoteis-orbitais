@@ -1,4 +1,15 @@
 'use client'
+import * as React from 'react'
+
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuLabel,
+    DropdownMenuRadioGroup,
+    DropdownMenuRadioItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from '../components/components-ui/ui/dropdown-menu'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { format } from 'date-fns'
@@ -32,6 +43,7 @@ const FormSchema = z.object({
 })
 
 export default function TopLeftSidebar() {
+    const [position, setPosition] = React.useState('bottom')
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
     })
@@ -51,8 +63,8 @@ export default function TopLeftSidebar() {
     }
 
     return (
-        <div className="flex text-white">
-            <div className="flex h-full w-[300px] flex-col  bg-[#2D3648]">
+        <div className="flex">
+            <div className="flex h-full w-[300px] flex-col bg-[#2D3648] text-white">
                 <div>
                     <h1 className="mx-auto pt-32 text-center text-lg font-semibold">
                         Filtragem
@@ -115,7 +127,6 @@ export default function TopLeftSidebar() {
                                 </label>
                             </div>
                         </div>
-
                         <div className="mt-8">
                             <p className="font-bold">Tipo de Hotel</p>
                             <div className="mr-4 mt-3 flex items-start rounded-[8px] border-2 border-l-[5px] px-2 font-extralight">
@@ -175,7 +186,6 @@ export default function TopLeftSidebar() {
                                 </div>
                             </div>
                         </div>
-
                         <div className="mb-8 mt-8">
                             <p className="font-bold">Tipo de Foguete</p>
                             <div className="mr-4 mt-3 flex items-start rounded-[8px] border-2 border-l-[5px] px-2 font-extralight">
@@ -238,80 +248,118 @@ export default function TopLeftSidebar() {
                     </div>
                 </div>
             </div>
-
-            <div className="flex h-32 w-full items-center justify-center bg-[#2D3648]">
-                <Form {...form}>
-                    <form
-                        onSubmit={form.handleSubmit(onSubmit)}
-                        className=" flex flex-wrap items-center max-[599px]:justify-center"
-                    >
-                        <FormField
-                            control={form.control}
-                            name="dob"
-                            render={({ field }) => (
-                                <FormItem className="relative flex flex-col">
-                                    <Popover>
-                                        <PopoverTrigger asChild>
-                                            <FormControl>
-                                                <Button
-                                                    variant={'outline'}
-                                                    className={cn(
-                                                        'w-[190px] rounded-l-[6px] rounded-r-none pl-3 text-left font-normal max-[310px]:rounded',
-                                                        !field.value &&
-                                                            'text-muted-foreground'
-                                                    )}
+            <div className="w-full">
+                <div className="grid grid-cols-1 grid-rows-2 gap-0 bg-[#2D3648]">
+                    <div className=" mx-auto py-14">
+                        <Form {...form}>
+                            <form
+                                onSubmit={form.handleSubmit(onSubmit)}
+                                className="flex flex-wrap items-center max-[599px]:justify-center"
+                            >
+                                <FormField
+                                    control={form.control}
+                                    name="dob"
+                                    render={({ field }) => (
+                                        <FormItem className="relative flex flex-col">
+                                            <Popover>
+                                                <PopoverTrigger asChild>
+                                                    <FormControl>
+                                                        <Button
+                                                            variant={'outline'}
+                                                            className={cn(
+                                                                'w-[190px] rounded-l-[6px] rounded-r-none pl-3 text-left font-normal max-[310px]:rounded',
+                                                                !field.value &&
+                                                                    'text-muted-foreground'
+                                                            )}
+                                                        >
+                                                            {field.value ? (
+                                                                format(
+                                                                    field.value,
+                                                                    'PPP'
+                                                                )
+                                                            ) : (
+                                                                <span>
+                                                                    Escolha uma
+                                                                    data
+                                                                </span>
+                                                            )}
+                                                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                                        </Button>
+                                                    </FormControl>
+                                                </PopoverTrigger>
+                                                <PopoverContent
+                                                    className="w-auto p-0"
+                                                    align="start"
                                                 >
-                                                    {field.value ? (
-                                                        format(
-                                                            field.value,
-                                                            'PPP'
-                                                        )
-                                                    ) : (
-                                                        <span>
-                                                            Escolha uma data
-                                                        </span>
-                                                    )}
-                                                    <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                                </Button>
-                                            </FormControl>
-                                        </PopoverTrigger>
-                                        <PopoverContent
-                                            className="w-auto p-0"
-                                            align="start"
-                                        >
-                                            <Calendar
-                                                mode="single"
-                                                selected={field.value}
-                                                onSelect={field.onChange}
-                                                disabled={(date) =>
-                                                    date <
-                                                    new Date('1900-01-01')
-                                                }
-                                                initialFocus
-                                            />
-                                        </PopoverContent>
-                                    </Popover>
-                                    <FormMessage className="absolute -bottom-5 max-[438px]:bottom-10" />
-                                </FormItem>
-                            )}
-                        />
-                        <div className=" flex h-10 items-center bg-white pr-4 max-[438px]:rounded-r-[6px] max-[310px]:mt-6 max-[310px]:rounded-l-[6px] max-[310px]:rounded-r-none">
-                            <Input className="w-20" type="number" />
-                            <UserPlus
-                                className=""
-                                color="black"
-                                size={24}
-                                opacity={0.3}
-                            />
+                                                    <Calendar
+                                                        mode="single"
+                                                        selected={field.value}
+                                                        onSelect={
+                                                            field.onChange
+                                                        }
+                                                        disabled={(date) =>
+                                                            date <
+                                                            new Date(
+                                                                '1900-01-01'
+                                                            )
+                                                        }
+                                                        initialFocus
+                                                    />
+                                                </PopoverContent>
+                                            </Popover>
+                                            <FormMessage className="absolute -bottom-5 max-[438px]:bottom-10" />
+                                        </FormItem>
+                                    )}
+                                />
+                                <div className=" flex h-10 items-center bg-white pr-4 max-[438px]:rounded-r-[6px] max-[310px]:mt-6 max-[310px]:rounded-l-[6px] max-[310px]:rounded-r-none">
+                                    <Input className="w-20" type="number" />
+                                    <UserPlus
+                                        className=""
+                                        color="black"
+                                        size={24}
+                                        opacity={0.3}
+                                    />
+                                </div>
+                                <Button
+                                    className="w-32 rounded-l-none rounded-r-[6px] bg-white text-black hover:bg-[#2D3648] hover:text-white max-[438px]:mt-6 max-[438px]:rounded-l-[6px] max-[310px]:rounded-l-none"
+                                    type="submit"
+                                >
+                                    Reserve
+                                </Button>
+                            </form>
+                        </Form>
+                    </div>
+                    <div className="row-start-2 bg-white">
+                        <div className="my-2 ml-2">
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button
+                                        className="hover:bg-[#2D3648 bg-[#2D3648] text-white hover:text-gray-400"
+                                        variant="outline"
+                                    >
+                                        Ordernar por
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="w-40">
+                                    <DropdownMenuRadioGroup
+                                        value={position}
+                                        onValueChange={setPosition}
+                                    >
+                                        <DropdownMenuRadioItem value="top">
+                                            Menor Preço
+                                        </DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="bottom">
+                                            Maior Preço
+                                        </DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="right">
+                                            Mais comprado
+                                        </DropdownMenuRadioItem>
+                                    </DropdownMenuRadioGroup>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
-                        <Button
-                            className="w-32 rounded-l-none rounded-r-[6px] bg-white text-black hover:bg-[#2D3648] hover:text-white max-[438px]:mt-6 max-[438px]:rounded-l-[6px] max-[310px]:rounded-l-none"
-                            type="submit"
-                        >
-                            Reserve
-                        </Button>
-                    </form>
-                </Form>
+                    </div>
+                </div>
             </div>
         </div>
     )
