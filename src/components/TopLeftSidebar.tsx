@@ -4,10 +4,8 @@ import * as React from 'react'
 import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuLabel,
     DropdownMenuRadioGroup,
     DropdownMenuRadioItem,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '../components/components-ui/ui/dropdown-menu'
 
