@@ -1,5 +1,24 @@
 'use client'
-import * as React from 'react'
+import CardTravel from './CardTravel'
+
+/*
+type dataTravelAvailable = {
+    id: number
+    departureDate: string
+    arrivalDate: string
+    departureTime: string
+    arrivalTime: string
+    departureCity: string
+    arrivalHotel: string
+    pricePerSeat: Decimal
+    pricePerStay: Decimal
+    star: number
+    rocketName: string
+    capacity: number
+}
+*/
+import React from 'react'
+import { api } from '~/utils/api'
 
 import {
     DropdownMenu,
@@ -32,6 +51,7 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from '../components/components-ui/ui/popover'
+
 //import { Toast } from '../components/components-ui/ui/toast'
 
 const FormSchema = z.object({
@@ -60,8 +80,10 @@ export default function TopLeftSidebar() {
         */
     }
 
+    const { data: travelAvailable } = api.travelsAvailable.getAll.useQuery()
+
     return (
-        <div className="flex">
+        <div className="flex bg-[#2D3648]">
             <div className="flex h-full w-[300px] flex-col bg-[#2D3648] text-white">
                 <div>
                     <h1 className="mx-auto pt-32 text-center text-lg font-semibold">
@@ -248,7 +270,7 @@ export default function TopLeftSidebar() {
             </div>
             <div className="w-full">
                 <div className="grid grid-cols-1 grid-rows-2 gap-0 bg-[#2D3648]">
-                    <div className=" mx-auto py-14">
+                    <div className="mx-auto h-fit place-self-start py-14">
                         <Form {...form}>
                             <form
                                 onSubmit={form.handleSubmit(onSubmit)}
@@ -356,6 +378,24 @@ export default function TopLeftSidebar() {
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         </div>
+                    </div>
+                    <div className="bg-white">
+                        {travelAvailable?.map((m, i) => (
+                            <CardTravel
+                                key={i}
+                                departureDate={m.departureDate}
+                                departureTime={m.departureTime}
+                                arrivalDate={m.arrivalDate}
+                                arrivalTime={m.arrivalTime}
+                                departureCity={m.departureCity}
+                                arrivalHotel={m.arrivalHotel}
+                                pricePerSeat={m.pricePerSeat}
+                                pricePerStay={m.pricePerStay}
+                                star={m.star}
+                                rocketName={m.rocketName}
+                                capacity={m.capacity}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

@@ -12,11 +12,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@index([name])
+model TravelAvailable {
+  id                 Int      @id @unique @default(autoincrement())
+  departureDate      String
+  arrivalDate        String
+  departureTime      String
+  arrivalTime        String
+  departureCity      String
+  arrivalHotel       String
+  pricePerSeat       Int
+  pricePerStay       Int
+  star               Int
+  rocketName         String
+  capacity           Int
 }
