@@ -1,3 +1,6 @@
+import ReactStars from 'react-rating-stars-component'
+import React from 'react'
+
 type dataTravelAvailable = {
     departureDate: string
     arrivalDate: string
@@ -45,7 +48,20 @@ export default function CardTravel(props: dataTravelAvailable) {
             </div>
             <div>
                 <p>Qualidade do Hotel</p>
-                <li>{props.star}</li>
+                <li className="list-none">
+                    <ReactStars
+                        count={5}
+                        edit={false}
+                        size={24}
+                        isHalf={true}
+                        value={props.star}
+                        emptyIcon={<i className="far fa-star"></i>}
+                        halfIcon={<i className="fa fa-star-half-alt"></i>}
+                        fullIcon={<i className="fa fa-star"></i>}
+                        activeColor="#ffd700"
+                        color="#bbbaba"
+                    />
+                </li>
             </div>
             <div>
                 <ul>
