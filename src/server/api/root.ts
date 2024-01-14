@@ -1,3 +1,4 @@
+import { reviewServiceIndexRouter } from './routers/router/review/reviewService'
 import { travelavailableIndexRouter } from './routers/router/travel/travelAvailable'
 import { createTRPCRouter } from '~/server/api/trpc'
 
@@ -8,6 +9,7 @@ import { createTRPCRouter } from '~/server/api/trpc'
  */
 export const appRouter = createTRPCRouter({
     travelsAvailable: travelavailableIndexRouter,
+    reviewsService: reviewServiceIndexRouter,
 })
 
 // export type definition of API

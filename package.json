@@ -7,7 +7,7 @@
     },
     "scripts": {
         "build": "next build",
-        "db:push": "pri sma db push",
+        "db:push": "prisma db push",
         "db:studio": "prisma studio",
         "dev": "prisma studio & next dev",
         "postinstall": "prisma generate",

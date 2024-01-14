@@ -16,6 +16,20 @@ async function seed() {
             rocketName: 'Starship',
             capacity: 12,
         },
+    }),
+
+    await prisma.reviewService.create({
+        data: {
+            id: 1,
+            star: 5,
+            title: 'Nunca vou esquecer isso!',
+            description:
+                'Tive a incrível chance de ficar neste hotel espacial recentemente, uma experiência verdadeiramente fora deste mundo! Desde o momento que entrei até a partida, fui cativado por todos os aspectos desta estadia celestial.',
+            profileURL:
+                'https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yWUtra3B0VzlJZHVLZ3FxMG5lQmNlSVd5TnYifQ',
+            name: 'Guilherme',
+            occupation: 'Programador',
+        },
     })
 
     // // Adicionar mais coisas aqui:

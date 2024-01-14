@@ -26,3 +26,13 @@ model TravelAvailable {
   rocketName         String
   capacity           Int
 }
+
+model ReviewService {
+  id                  Int @id @unique @default(autoincrement())
+  star                Int
+  title               String
+  description         String
+  profileURL          String
+  name                String
+  occupation          String
+}

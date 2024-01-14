@@ -81,6 +81,10 @@ module.exports = {
                     '0 0px 65px rgba(255, 255,255, 0.2)',
                 ],
             },
+
+            backgroundImage: {
+                bgFaq: "url('https://cdn.pixabay.com/photo/2020/01/13/02/13/astronaut-4761504_640.png')",
+            },
         },
     },
     plugins: [require('tailwindcss-animate')],
