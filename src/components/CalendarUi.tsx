@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { Input } from '../components/components-ui/ui/input'
 import { UserPlus } from 'lucide-react'
+import Link from 'next/link'
 
 import { cn } from '../lib/utils'
 import { Button } from '../components/components-ui/ui/button'
@@ -110,12 +111,14 @@ export function CalendarForm() {
                         opacity={0.3}
                     />
                 </div>
-                <Button
-                    className="w-32 rounded-l-none rounded-r-[6px] bg-white text-black hover:bg-[#2D3648] hover:text-white max-[438px]:mt-6 max-[438px]:rounded-l-[6px] max-[310px]:rounded-l-none"
-                    type="submit"
-                >
-                    Reserve
-                </Button>
+                <Link href="/reserve">
+                    <Button
+                        className="w-32 rounded-l-none rounded-r-[6px] bg-white text-black hover:bg-[#2D3648] hover:text-white max-[438px]:mt-6 max-[438px]:rounded-l-[6px] max-[310px]:rounded-l-none"
+                        type="submit"
+                    >
+                        Reserve
+                    </Button>
+                </Link>
             </form>
         </Form>
     )
