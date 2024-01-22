@@ -1,15 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import img_banner from '../../public/bg_home.png'
-import img_orbit_planet from '../../public/orbit_planet.png'
 import { KoulenFont } from '../lib/fonts'
 import { InterFont } from '../lib/fonts'
 import { CalendarForm } from '~/components/CalendarUi'
 import { useState, useEffect } from 'react'
-import CardImageDescription from '../components/CardImageDescription'
-import stars_img from '../../public/5_stars.png'
-import gravitation from '../../public/gravitation_img.png'
-import astronaut from '../../public/astronaut_img.png'
 import CountUp from 'react-countup'
 import { CounterFont } from '../lib/fonts'
 import Faq from '~/components/Faq'
@@ -46,8 +41,8 @@ export default function Home() {
                 <link rel="icon" href="/icon.png" />
             </Head>
             <div className="h-[75vh]">
-                <section className="relative h-[43vh]">
-                    <div className="absolute z-[-1] h-[75vh] w-screen max-w-full max-[425px]:h-[93svh]">
+                <section className="relative h-screen">
+                    <div className="absolute z-[-1] h-screen w-screen max-w-full max-[425px]:h-[93svh]">
                         <Image
                             alt="img_rocket"
                             src={img_banner}
@@ -60,8 +55,6 @@ export default function Home() {
                                     : 'none',
                             }}
                         />
-                        <div className="absolute -bottom-[3.13rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-black border-t-transparent"></div>
-                        <div className="absolute -bottom-[3.13rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-black border-t-transparent"></div>
                     </div>
                     <div className="ml-20 pt-32 max-[599px]:ml-0 max-[599px]:flex max-[599px]:flex-col max-[599px]:items-center">
                         <div className={KoulenFont.className}>
@@ -80,64 +73,11 @@ export default function Home() {
                             </p>
                         </div>
                     </div>
-                    <div className="transforms absolute -bottom-full left-1/2 -translate-x-1/2 max-[690px]:hidden">
-                        <div className="mx-auto flex max-w-full gap-x-28 max-[1170px]:gap-x-16 max-[948px]:gap-x-11 max-[815px]:gap-6">
-                            <CardImageDescription
-                                src={img_orbit_planet}
-                                alt="img_orbit_planet"
-                                text="Uma estadia segura em orbita"
-                            />
-                            <CardImageDescription
-                                src={stars_img}
-                                alt="stars"
-                                text="Restaurantes incríveis"
-                            />
-                            <CardImageDescription
-                                src={gravitation}
-                                alt="img_gravitation"
-                                text="Gravidade artificial"
-                            />
-                            <CardImageDescription
-                                src={astronaut}
-                                alt="img_astronaut"
-                                text="Sala de gravidade 0"
-                            />
-                        </div>
-                    </div>
                 </section>
             </div>
             <div className="h-screen">
-                <div className="mx-auto mt-20 flex max-w-full flex-wrap justify-center gap-5 max-[425px]:mt-48 min-[690px]:hidden">
-                    <CardImageDescription
-                        src={img_orbit_planet}
-                        alt="img_orbit_planet"
-                        text="Uma estadia segura em orbita"
-                    />
-                    <CardImageDescription
-                        src={stars_img}
-                        alt="stars"
-                        text="Restaurantes incríveis"
-                    />
-                    <CardImageDescription
-                        src={gravitation}
-                        alt="img_gravitation"
-                        text="Gravidade artificial"
-                    />
-                    <CardImageDescription
-                        src={astronaut}
-                        alt="img_astronaut"
-                        text="Sala de gravidade 0"
-                    />
-                </div>
-                <div className="relative flex items-end justify-center overflow-hidden pt-40 max-[690px]:pt-20">
-                    <div className="absolute left-[98.5%] top-5 h-32 border-[15px] border-black max-[690px]:hidden"></div>
-                    <div className="absolute right-[98.5%] top-5 h-32 border-[15px] border-black max-[690px]:hidden"></div>
-
-                    <div className="relative w-full  bg-gradient-to-t from-gray-500 via-gray-800 to-black">
-                        <div className="absolute -top-[3.12rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-[#010203] border-t-transparent"></div>
-                        <div className="absolute -bottom-[3.13rem] left-0 h-0 w-0 border-b-[50px] border-l-[75px] border-t-[50px] border-b-transparent border-l-white border-t-transparent"></div>
-                        <div className="absolute -top-[3.12rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-[#010203] border-t-transparent"></div>
-                        <div className="absolute -bottom-[3.13rem] right-0 border-b-[50px] border-r-[75px] border-t-[50px] border-b-transparent border-r-white border-t-transparent"></div>
+                <div className=" flex items-end justify-center overflow-hidden pt-24">
+                    <div className=" w-full bg-gradient-to-t from-transparent via-gray-600 to-black">
                         <div className=" mx-auto max-w-4xl space-y-8 rounded-[8px] px-6 py-16 text-white">
                             <div>
                                 <h2 className="text-2xl font-bold">
@@ -169,11 +109,11 @@ export default function Home() {
                                     terminam.
                                 </p>
                             </div>
-                            <div>
+                            <div className="text-gray-900">
                                 <h2 className="text-2xl font-bold">
                                     Luxo Além das Estrelas
                                 </h2>
-                                <p className="mt-2 font-bold text-white">
+                                <p className="mt-2 font-bold">
                                     Nossos hotéis é uma fusão de sofisticação e
                                     conforto, projetado para atender às suas
                                     necessidades mais exigentes. De suítes
@@ -183,11 +123,11 @@ export default function Home() {
                                     experiência de classe mundial.
                                 </p>
                             </div>
-                            <div>
+                            <div className=" text-gray-900">
                                 <h2 className="text-2xl font-bold">
                                     Gastronomia Celestial
                                 </h2>
-                                <p className="mt-2 font-bold text-white">
+                                <p className="mt-2 font-bold">
                                     Nossos restaurantes oferecem uma culinária
                                     celestial que combina o melhor da
                                     gastronomia terrestre com toques de inovação
