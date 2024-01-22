@@ -76,9 +76,9 @@ export default function Home() {
                 </section>
             </div>
             <div className="h-screen">
-                <div className=" flex items-end justify-center overflow-hidden pt-24">
+                <div className=" flex items-end justify-center overflow-hidden pt-16">
                     <div className=" w-full bg-gradient-to-t from-transparent via-gray-600 to-black">
-                        <div className=" mx-auto max-w-4xl space-y-8 rounded-[8px] px-6 py-16 text-white">
+                        <div className="mx-auto max-w-4xl space-y-8 rounded-[8px] px-6 pb-16 pt-20 text-white">
                             <div>
                                 <h2 className="text-2xl font-bold">
                                     Você está a um passo de Viajar para o espaço
