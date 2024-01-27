@@ -60,7 +60,11 @@ const FormSchema = z.object({
     }),
 })
 
-export default function TopLeftSidebar() {
+type dataInfo = {
+    dayInfo: string
+}
+
+export default function TopLeftSidebar(props: dataInfo) {
     const [position, setPosition] = React.useState('bottom')
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
@@ -379,23 +383,28 @@ export default function TopLeftSidebar() {
                             </DropdownMenu>
                         </div>
                     </div>
-                    <div className="bg-white">
-                        {travelAvailable?.map((m, i) => (
-                            <CardTravel
-                                key={i}
-                                departureDate={m.departureDate}
-                                departureTime={m.departureTime}
-                                arrivalDate={m.arrivalDate}
-                                arrivalTime={m.arrivalTime}
-                                departureCity={m.departureCity}
-                                arrivalHotel={m.arrivalHotel}
-                                pricePerSeat={m.pricePerSeat}
-                                pricePerStay={m.pricePerStay}
-                                star={m.star}
-                                rocketName={m.rocketName}
-                                capacity={m.capacity}
-                            />
-                        ))}
+                    <div className="relative">
+                        <div className="flex w-full flex-col items-start bg-white">
+                            <span className="relative left-[30%] text-2xl">
+                                {props.dayInfo}
+                            </span>
+                            {travelAvailable?.map((m, i) => (
+                                <CardTravel
+                                    key={i}
+                                    departureDate={m.departureDate}
+                                    departureTime={m.departureTime}
+                                    arrivalDate={m.arrivalDate}
+                                    arrivalTime={m.arrivalTime}
+                                    departureCity={m.departureCity}
+                                    arrivalHotel={m.arrivalHotel}
+                                    pricePerSeat={m.pricePerSeat}
+                                    pricePerStay={m.pricePerStay}
+                                    star={m.star}
+                                    rocketName={m.rocketName}
+                                    capacity={m.capacity}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

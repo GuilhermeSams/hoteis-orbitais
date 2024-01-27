@@ -139,8 +139,8 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className=" px-8 pt-20 max-[450px]:px-16">
-                    <div className="mx-auto flex h-56 max-w-5xl  items-center justify-center rounded-[8px] outline outline-2  outline-offset-8 max-[450px]:h-full">
+                <div className="px-8 pt-20 max-[450px]:px-16">
+                    <div className="mx-auto flex h-56 max-w-5xl items-center justify-center rounded-[8px] outline outline-2  outline-offset-8 max-[450px]:h-full">
                         <div className="flex h-full w-full justify-center rounded-[8px] bg-[#2D3648]">
                             <div
                                 className={`${CounterFont.className} flex w-full items-center justify-evenly text-center text-white max-[450px]:flex-col`}

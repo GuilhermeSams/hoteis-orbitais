@@ -1,17 +1,17 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { format } from 'date-fns'
+import { format, parse, differenceInDays } from 'date-fns'
 import { CalendarIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { Input } from '../components/components-ui/ui/input'
 import { UserPlus } from 'lucide-react'
 import Link from 'next/link'
-
 import { cn } from '../lib/utils'
 import { Button } from '../components/components-ui/ui/button'
 import { Calendar } from '../components/components-ui/ui/calendar'
+
 import {
     Form,
     FormControl,
@@ -24,7 +24,17 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from '../components/components-ui/ui/popover'
+import { useRouter } from 'next/router'
+
 //import { Toast } from '../components/components-ui/ui/toast'
+
+function getDate() {
+    const today = new Date()
+    const month = today.getMonth() + 1
+    const year = today.getFullYear()
+    const date = today.getDate()
+    return `${month}/${date}/${year}`
+}
 
 const FormSchema = z.object({
     dob: z.date({
@@ -32,31 +42,52 @@ const FormSchema = z.object({
     }),
 })
 
+export const dynamic = 'force-dynamic'
+
 export function CalendarForm() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
     })
 
-    function onSubmit(/*data: z.infer<typeof FormSchema>*/) {
-        /*Toast({
-            title: 'You submitted the following values:',
-            description: (
-                <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-                    <code className="text-white">
-                        {JSON.stringify(data, null, 2)}
-                    </code>
-                </pre>
-            ),
-        })
-        */
+    const router = useRouter()
+
+    function onSubmit(data: z.infer<typeof FormSchema>) {
+        const formattedDate = format(data.dob, 'dd/MM/yyyy')
+        //console.log('Data do calendario', formattedDate)
+
+        const currentDate = parse(getDate(), 'MM/dd/yyyy', new Date())
+        const formattedCurrentDate = format(currentDate, 'dd/MM/yyyy')
+        //console.log('Data local:', formattedCurrentDate)
+
+        const difference = differenceInDays(
+            parse(formattedDate, 'dd/MM/yyyy', new Date()),
+            currentDate
+        )
+
+        let message = ''
+
+        // Lógica de mensagens
+        if (difference === 0) {
+            message = 'Viagens saindo hoje'
+        } else if (difference === 1) {
+            message = 'Viagens saindo amanhã'
+        } else {
+            message = `Viagens saindo em ${formattedDate}`
+        }
+
+        Promise.resolve()
+            .then(() => {
+                void router.push({
+                    pathname: '/reserve',
+                    query: { day: message },
+                })
+            })
+            .catch(() => console.log('Algo inesperado aconteceu'))
     }
 
     return (
         <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="mt-16 flex flex-wrap items-center max-[599px]:justify-center"
-            >
+            <div className="mt-16 flex flex-wrap items-center max-[599px]:justify-center">
                 <FormField
                     control={form.control}
                     name="dob"
@@ -113,13 +144,20 @@ export function CalendarForm() {
                 </div>
                 <Link href="/reserve">
                     <Button
+                        onClick={form.handleSubmit(onSubmit)}
                         className="w-32 rounded-l-none rounded-r-[6px] bg-white text-black hover:bg-[#2D3648] hover:text-white max-[438px]:mt-6 max-[438px]:rounded-l-[6px] max-[310px]:rounded-l-none"
                         type="submit"
                     >
                         Reserve
                     </Button>
                 </Link>
-            </form>
+            </div>
         </Form>
     )
+}
+function Toast(arg0: {
+    title: string
+    description: import('react').JSX.Element
+}) {
+    throw new Error('Function not implemented.')
 }
