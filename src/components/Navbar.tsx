@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <header>
-            <nav>
+            <nav className="">
                 <ul className="font-montserratAlt flex h-20 items-center justify-between px-8 font-bold text-[#2D3648]">
                     <ul>
                         <li className="">

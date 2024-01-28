@@ -8,7 +8,7 @@ import {
 export default function Faq() {
     return (
         <Accordion
-            className="h-screen max-w-2xl max-[426px]:text-center"
+            className="h-screen max-w-2xl text-white max-[426px]:text-center"
             type="single"
             collapsible
         >

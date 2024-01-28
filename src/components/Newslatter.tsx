@@ -10,17 +10,17 @@ export default function Newslatter() {
             className={`${InterFont.className} mx-40 mb-10 text-center max-[832px]:mx-5 max-[750px]:mt-72`}
         >
             <div>
-                <h1 className="mb-10 bg-white text-2xl font-extrabold text-[#2D3648] max-[555px]:text-xl ">
+                <h1 className="mb-10 text-2xl font-extrabold text-white max-[555px]:text-xl ">
                     INSCREVA-SE NO NOSSO
                     <br />
                     NEWSLATTER
                 </h1>
             </div>
-            <div className="relative flex w-full flex-col items-center justify-center rounded-[8px] border-2 border-[#2D3648] bg-[#717D96] py-20">
+            <div className="relative flex w-full flex-col items-center justify-center rounded-[8px] bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-indigo-900 via-indigo-400 to-indigo-900 py-20">
                 <div className="space-y-6">
                     <div className="flex items-center justify-center">
                         <Image
-                            className="absolute left-[50%] right-[50%] translate-x-[-50%] translate-y-[-140%] transform rounded-full  bg-[#2D3648] p-2"
+                            className="absolute left-[50%] right-[50%] translate-x-[-50%] translate-y-[-140%] transform rounded-full  bg-yellow-500 p-2"
                             alt="icone email"
                             src={icone_email}
                             priority={true}

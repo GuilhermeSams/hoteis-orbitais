@@ -56,7 +56,7 @@ export function CalendarForm() {
         //console.log('Data do calendario', formattedDate)
 
         const currentDate = parse(getDate(), 'MM/dd/yyyy', new Date())
-        const formattedCurrentDate = format(currentDate, 'dd/MM/yyyy')
+        //const formattedCurrentDate = format(currentDate, 'dd/MM/yyyy')
         //console.log('Data local:', formattedCurrentDate)
 
         const difference = differenceInDays(
@@ -154,10 +154,4 @@ export function CalendarForm() {
             </div>
         </Form>
     )
-}
-function Toast(arg0: {
-    title: string
-    description: import('react').JSX.Element
-}) {
-    throw new Error('Function not implemented.')
 }
