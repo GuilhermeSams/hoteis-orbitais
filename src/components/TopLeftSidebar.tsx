@@ -1,5 +1,6 @@
 'use client'
 import CardTravel from './CardTravel'
+import { useState } from 'react'
 
 /*
 type dataTravelAvailable = {
@@ -66,6 +67,7 @@ type dataInfo = {
 
 export default function TopLeftSidebar(props: dataInfo) {
     const [position, setPosition] = React.useState('bottom')
+    const [selectedCardId, setSelectedCardId] = useState<number>()
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
     })
@@ -85,6 +87,18 @@ export default function TopLeftSidebar(props: dataInfo) {
     }
 
     const { data: travelAvailable } = api.travelsAvailable.getAll.useQuery()
+
+    const filteredTravelAvailable = selectedCardId
+        ? travelAvailable?.filter((m) => m.id === selectedCardId)
+        : travelAvailable
+
+    const handleClickCard = (id: number) => {
+        setSelectedCardId(id)
+    }
+
+    const handleCloseInfoDiv = () => {
+        setSelectedCardId(null)
+    }
 
     return (
         <div className="flex bg-[#2D3648]">
@@ -384,28 +398,55 @@ export default function TopLeftSidebar(props: dataInfo) {
                         </div>
                     </div>
                     <div className="relative">
-                        <div className="flex w-full flex-col items-start bg-white">
+                        <div className=" bg-white">
                             <span className="relative left-[30%] text-2xl">
                                 {props.dayInfo}
                             </span>
                             {travelAvailable?.map((m, i) => (
-                                <CardTravel
+                                <div
+                                    className="mx-auto w-fit cursor-pointer transition delay-0 duration-200 ease-in-out hover:-translate-y-1 hover:scale-105"
+                                    onClick={() => handleClickCard(m.id)}
                                     key={i}
-                                    departureDate={m.departureDate}
-                                    departureTime={m.departureTime}
-                                    arrivalDate={m.arrivalDate}
-                                    arrivalTime={m.arrivalTime}
-                                    departureCity={m.departureCity}
-                                    arrivalHotel={m.arrivalHotel}
-                                    pricePerSeat={m.pricePerSeat}
-                                    pricePerStay={m.pricePerStay}
-                                    star={m.star}
-                                    rocketName={m.rocketName}
-                                    capacity={m.capacity}
-                                />
+                                >
+                                    <CardTravel
+                                        departureDate={m.departureDate}
+                                        departureTime={m.departureTime}
+                                        arrivalDate={m.arrivalDate}
+                                        arrivalTime={m.arrivalTime}
+                                        departureCity={m.departureCity}
+                                        arrivalHotel={m.arrivalHotel}
+                                        pricePerSeat={m.pricePerSeat}
+                                        pricePerStay={m.pricePerStay}
+                                        star={m.star}
+                                        rocketName={m.rocketName}
+                                        capacity={m.capacity}
+                                    />
+                                </div>
                             ))}
                         </div>
                     </div>
+                    {selectedCardId && (
+                        <div className="absolute bottom-0 left-0 right-0 top-0 z-10 flex items-center justify-center bg-black bg-opacity-50">
+                            <div className="rounded-md bg-white p-4">
+                                {/* Renderiza as informações do card clicado na div */}
+                                {filteredTravelAvailable?.map((m) => (
+                                    <CardTravel
+                                        key={m.id}
+                                        departureDate={m.departureDate}
+                                        arrivalDate={m.arrivalDate}
+                                        departureTime={m.departureTime}
+                                        arrivalTime={m.arrivalTime}
+                                        departureCity={m.departureCity}
+                                        arrivalHotel={m.arrivalHotel}
+                                        // Omit as outras propriedades que não são necessárias
+                                    />
+                                ))}
+                                <button onClick={handleCloseInfoDiv}>
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

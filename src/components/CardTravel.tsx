@@ -17,7 +17,7 @@ type dataTravelAvailable = {
 
 export default function CardTravel(props: dataTravelAvailable) {
     return (
-        <div className="mx-auto my-8 w-[700px] space-y-4 rounded-[8px] border-[1px] border-[#2D3648] bg-[#E2E7F0] p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+        <div className="mx-auto my-8 w-[700px] animate-fade-up space-y-4 rounded-[8px] border-[1px] border-[#2D3648] bg-[#E2E7F0] p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
             <div className=" flex items-center space-x-6">
                 <ul className=" border-r-2 border-black pr-8">
                     <div className="flex">
