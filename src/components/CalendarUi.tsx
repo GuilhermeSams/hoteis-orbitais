@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { cn } from '../lib/utils'
 import { Button } from '../components/components-ui/ui/button'
 import { Calendar } from '../components/components-ui/ui/calendar'
+import { ptBR } from 'date-fns/locale'
 
 import {
     Form,
@@ -85,6 +86,11 @@ export function CalendarForm() {
             .catch(() => console.log('Algo inesperado aconteceu'))
     }
 
+    function formatDateForPlaceholder(date: number | Date) {
+        // Use a função format do date-fns para formatar a data conforme desejado
+        return format(date, "d 'de' MMM 'de' yyyy", { locale: ptBR })
+    }
+
     return (
         <Form {...form}>
             <div className="mt-16 flex flex-wrap items-center max-[599px]:justify-center">
@@ -105,7 +111,9 @@ export function CalendarForm() {
                                             )}
                                         >
                                             {field.value ? (
-                                                format(field.value, 'PPP')
+                                                formatDateForPlaceholder(
+                                                    field.value
+                                                )
                                             ) : (
                                                 <span>Escolha uma data</span>
                                             )}
@@ -122,9 +130,13 @@ export function CalendarForm() {
                                         selected={field.value}
                                         onSelect={field.onChange}
                                         disabled={(date) =>
-                                            date < new Date('1900-01-01')
+                                            date <
+                                            new Date(
+                                                new Date().setHours(0, 0, 0, 0)
+                                            )
                                         }
                                         initialFocus
+                                        showOutsideDays={true}
                                     />
                                 </PopoverContent>
                             </Popover>

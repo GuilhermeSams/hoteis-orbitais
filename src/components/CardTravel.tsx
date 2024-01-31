@@ -56,35 +56,39 @@ export default function CardTravel(props: dataTravelAvailable) {
                     </li>
                 </ul>
             </div>
-            <div>
-                <p>Qualidade do Hotel</p>
-                <li className="list-none">
-                    <ReactStars
-                        count={5}
-                        edit={false}
-                        size={24}
-                        isHalf={true}
-                        value={props.star}
-                        emptyIcon={<i className="far fa-star"></i>}
-                        halfIcon={<i className="fa fa-star-half-alt"></i>}
-                        fullIcon={<i className="fa fa-star"></i>}
-                        activeColor="#ffd700"
-                        color="#bbbaba"
-                    />
-                </li>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        <p>Foguete da Viagem</p>
-                        <li>{props.rocketName}</li>
+            <div className="flex gap-10">
+                <div>
+                    <p>Qualidade do Hotel</p>
+                    <li className="list-none">
+                        <ReactStars
+                            count={5}
+                            edit={false}
+                            size={24}
+                            isHalf={true}
+                            value={props.star}
+                            emptyIcon={<i className="far fa-star"></i>}
+                            halfIcon={<i className="fa fa-star-half-alt"></i>}
+                            fullIcon={<i className="fa fa-star"></i>}
+                            activeColor="#ffd700"
+                            color="#bbbaba"
+                        />
                     </li>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <li>Capacidade Total: {props.capacity}</li>
-                </ul>
+                </div>
+                <div>
+                    <div>
+                        <ul>
+                            <li>
+                                <p>Foguete da Viagem</p>
+                                <li>{props.rocketName}</li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Capacidade Total: {props.capacity}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     )

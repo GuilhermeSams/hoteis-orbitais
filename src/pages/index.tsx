@@ -168,6 +168,7 @@ export default function Home() {
                                         className="text-7xl drop-shadow-glow max-[750px]:text-5xl max-[450px]:text-3xl"
                                         enableScrollSpy={true}
                                         end={458}
+                                        scrollSpyOnce={true}
                                     />
                                     <span className="text-xl max-[450px]:text-sm">
                                         Voos
@@ -178,8 +179,8 @@ export default function Home() {
                                     <CountUp
                                         className="text-7xl  font-light drop-shadow-glow max-[750px]:text-5xl max-[450px]:text-3xl "
                                         enableScrollSpy={true}
+                                        scrollSpyOnce={true}
                                         end={5496}
-                                        start={0}
                                         separator=""
                                     />
                                     <span className="text-xl max-[450px]:text-sm">
@@ -192,6 +193,7 @@ export default function Home() {
                                     <CountUp
                                         className="text-7xl drop-shadow-glow max-[750px]:text-5xl max-[450px]:text-3xl"
                                         enableScrollSpy={true}
+                                        scrollSpyOnce={true}
                                         end={31}
                                     />
                                     <span className="text-xl max-[450px]:text-sm">
