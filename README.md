@@ -2,7 +2,7 @@
 
 https://hoteis-orbitais.vercel.app/
 
-![image](https://github.com/GuilhermeSams/hoteis-orbitais/assets/73487936/2d8bd23f-ca03-4f2c-a473-6b7df677570a)
+![image](https://github.com/GuilhermeSams/hoteis-orbitais/assets/73487936/105f23bb-e862-4adf-a091-6d68fd8d024a)
 
 
 # Create T3 App
