@@ -1,7 +1,7 @@
 'use client'
 import CardTravel from './CardTravel'
-import { useState } from 'react'
 import CardModalTravel from './CardModalTravel'
+import { useState, useEffect } from 'react'
 
 import {
     AlertDialog,
@@ -87,6 +87,8 @@ export default function TopLeftSidebar(props: dataInfo) {
         resolver: zodResolver(FormSchema),
     })
 
+    const [isDialogOpen, setIsDialogOpen] = useState<boolean | undefined>(false)
+
     function onSubmit(/*data: z.infer<typeof FormSchema>*/) {
         /*Toast({
             title: 'You submitted the following values:',
@@ -109,11 +111,21 @@ export default function TopLeftSidebar(props: dataInfo) {
 
     const handleClickCard = (id: number) => {
         setSelectedCardId(id)
+        setIsDialogOpen(true)
     }
 
     const handleCloseInfoDiv = () => {
         setSelectedCardId(null)
+        setIsDialogOpen(false)
     }
+
+    useEffect(() => {
+        if (selectedCardId !== null && selectedCardId !== undefined) {
+            setIsDialogOpen(true)
+        } else {
+            setIsDialogOpen(false)
+        }
+    }, [selectedCardId])
 
     return (
         <div className="flex bg-[#2D3648]">
@@ -440,7 +452,7 @@ export default function TopLeftSidebar(props: dataInfo) {
                             ))}
                         </div>
                         {selectedCardId && (
-                            <AlertDialog open={setSelectedCardId}>
+                            <AlertDialog open={isDialogOpen}>
                                 <AlertDialogTrigger>Open</AlertDialogTrigger>
                                 <AlertDialogContent>
                                     <AlertDialogHeader>
