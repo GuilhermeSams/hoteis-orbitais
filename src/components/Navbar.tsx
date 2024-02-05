@@ -3,23 +3,35 @@ import { SignInButton, useUser } from '@clerk/nextjs'
 import { Button } from '../components/components-ui/ui/button'
 import { DropdownMenuDemo } from '../components/menuBurguer'
 import DropdownProfile from '../components/DropdawnProfile'
+import logo from '../../public/icon.png'
+import Image from 'next/image'
 
 export default function Navbar() {
     const user = useUser()
 
     return (
-        <header>
+        <header className="">
             <nav className="">
                 <ul className="font-montserratAlt flex h-20 items-center justify-between px-8 font-bold text-[#2D3648]">
                     <ul>
                         <li className="">
                             <Link
-                                className="rounded-[4px] bg-[#2D3648]  px-6 py-3 text-xl text-white "
+                                className="rounded-[4px] bg-[#2D3648] px-6 py-3 text-xl text-white max-[380px]:hidden "
                                 href={'/'}
                                 style={{ whiteSpace: 'nowrap' }}
                             >
                                 HOTÉIS ORBITAIS
                             </Link>
+                            <Image
+                                alt="img_logo"
+                                src={logo}
+                                className="w-14 min-[380px]:hidden"
+                                quality={100}
+                                priority={true}
+                                style={{
+                                    objectFit: 'contain',
+                                }}
+                            />
                         </li>
                     </ul>
                     <div className="absolute right-0 mr-8 flex items-center gap-2 sm:hidden">
