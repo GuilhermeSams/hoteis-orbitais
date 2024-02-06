@@ -220,7 +220,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="mb-20 h-screen">
+                <div className="mb-0 h-full max-[750px]:h-screen">
                     <div className=" flex items-center justify-evenly px-4 max-[1200px]:flex-col-reverse">
                         <div
                             className={`${InterFont.className} space-y-2 pt-12`}

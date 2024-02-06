@@ -12,7 +12,6 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-    AlertDialogTrigger,
 } from '../components/components-ui/ui/alert-dialog'
 
 /*
@@ -313,7 +312,7 @@ export default function TopLeftSidebar(props: dataInfo) {
                     </div>
                 </div>
             </div>
-            <div className="w-full">
+            <div className="w-full bg-white">
                 <div className="grid grid-cols-1 grid-rows-2 gap-0 bg-[#2D3648]">
                     <div className="mx-auto h-fit place-self-start py-14">
                         <Form {...form}>
@@ -453,7 +452,6 @@ export default function TopLeftSidebar(props: dataInfo) {
                         </div>
                         {selectedCardId && (
                             <AlertDialog open={isDialogOpen}>
-                                <AlertDialogTrigger>Open</AlertDialogTrigger>
                                 <AlertDialogContent>
                                     <AlertDialogHeader>
                                         <AlertDialogTitle className="mb-4 text-2xl">
