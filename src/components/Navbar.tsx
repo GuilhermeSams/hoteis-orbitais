@@ -10,31 +10,32 @@ export default function Navbar() {
     const user = useUser()
 
     return (
-        <header className="">
+        <header
+            className="relative z-[1]
+        "
+        >
             <nav className="">
-                <ul className="font-montserratAlt flex h-20 items-center justify-between px-8 font-bold text-[#2D3648]">
+                <ul className="font-montserratAlt flex h-24 items-center justify-between px-20 font-bold text-white">
                     <ul>
                         <li className="">
                             <Link
-                                className="rounded-[4px] bg-[#2D3648] px-6 py-3 text-xl text-white max-[380px]:hidden "
+                                className="rounded-[4px] px-6 py-3 text-xl text-white"
                                 href={'/'}
-                                style={{ whiteSpace: 'nowrap' }}
                             >
-                                HOTÉIS ORBITAIS
+                                <Image
+                                    alt="img_logo"
+                                    src={logo}
+                                    className="w-14"
+                                    quality={100}
+                                    priority={true}
+                                    style={{
+                                        objectFit: 'contain',
+                                    }}
+                                />
                             </Link>
-                            <Image
-                                alt="img_logo"
-                                src={logo}
-                                className="w-14 min-[380px]:hidden"
-                                quality={100}
-                                priority={true}
-                                style={{
-                                    objectFit: 'contain',
-                                }}
-                            />
                         </li>
                     </ul>
-                    <div className="absolute right-0 mr-8 flex items-center gap-2 sm:hidden">
+                    <div className="absolute right-0 mr-14 flex items-center gap-2 sm:hidden">
                         <DropdownMenuDemo />
                     </div>
                     <ul
@@ -43,7 +44,7 @@ export default function Navbar() {
                     >
                         <li>
                             <Link
-                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
+                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-white after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
                                 href={'reserve'}
                             >
                                 Reserve
@@ -51,7 +52,7 @@ export default function Navbar() {
                         </li>
                         <li>
                             <Link
-                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
+                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-white after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
                                 href={'#'}
                             >
                                 Ofertas
@@ -59,7 +60,7 @@ export default function Navbar() {
                         </li>
                         <li>
                             <Link
-                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
+                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-white after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
                                 href={'#'}
                             >
                                 Hotéis
@@ -67,7 +68,7 @@ export default function Navbar() {
                         </li>
                         <li>
                             <Link
-                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
+                                className="relative block w-fit after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-white after:transition after:duration-200 after:content-[''] after:hover:scale-x-100"
                                 href={'#'}
                             >
                                 Sobre-nos
@@ -77,7 +78,7 @@ export default function Navbar() {
                             {!user.isSignedIn && (
                                 <SignInButton>
                                     <Button
-                                        className="border-2 border-[#2D3648] hover:bg-[#2D3648] hover:text-white"
+                                        className="border-2 border-[#2D3648] text-black hover:bg-[#2D3648] hover:text-white"
                                         variant="outline"
                                     >
                                         Login
