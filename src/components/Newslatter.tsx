@@ -16,7 +16,7 @@ export default function Newslatter() {
                     NEWSLATTER
                 </h1>
             </div>
-            <div className="relative flex w-full flex-col items-center justify-center rounded-[8px] bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-indigo-900 via-indigo-400 to-indigo-900 py-20">
+            <div className="relative flex w-full flex-col items-center justify-center rounded-[8px] bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#28F19D] via-indigo-400 to-[#05A9F0] py-20">
                 <div className="space-y-6">
                     <div className="flex items-center justify-center">
                         <Image

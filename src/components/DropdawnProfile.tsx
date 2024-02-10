@@ -34,18 +34,21 @@ export default function DropdownMenuDemo() {
     return (
         <DropdownMenu>
             <div className="flex flex-row-reverse">
-                <DropdownMenuTrigger asChild className="flex ">
+                <DropdownMenuTrigger className="flex flex-row-reverse outline-none">
                     <Button
-                        className="focus-visible: rounded-l-none bg-[#2D3648] font-bold text-white ring-offset-0 max-[640px]:hidden"
+                        className="rounded-l-none  bg-gradient-to-r from-[#28F19D] to-[#05A9F0] font-bold text-black ring-offset-0 hover:shadow-[inset_-12px_-8px_40px_#00000054] max-[640px]:hidden"
                         variant="default"
                     >
                         {GetName()}
                     </Button>
+
+                    <div
+                        className="h-10 w-10 rounded-l-[8px] bg-contain bg-no-repeat "
+                        style={{
+                            backgroundImage: `url(${GetImageUrlProfile()})`,
+                        }}
+                    ></div>
                 </DropdownMenuTrigger>
-                <div
-                    className="h-10 w-10 rounded-l-[8px] bg-contain bg-no-repeat"
-                    style={{ backgroundImage: `url(${GetImageUrlProfile()})` }}
-                ></div>
             </div>
             <DropdownMenuContent className="mr-8 w-56">
                 <Link href={'/menage-profile'}>
