@@ -25,6 +25,7 @@ model TravelAvailable {
   star               Int
   rocketName         String
   capacity           Int
+  typeNumberHotel    Int
 }
 
 model ReviewService {

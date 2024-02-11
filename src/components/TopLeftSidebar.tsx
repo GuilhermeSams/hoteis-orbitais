@@ -2,6 +2,7 @@
 import CardTravel from './CardTravel'
 import CardModalTravel from './CardModalTravel'
 import { useState, useEffect } from 'react'
+import { X, CornerDownLeft, DollarSign } from 'lucide-react'
 
 import {
     AlertDialog,
@@ -126,6 +127,9 @@ export default function TopLeftSidebar(props: dataInfo) {
         }
     }, [selectedCardId])
 
+    const handleClickTypeHotel = (typeNumberHotel: number) => {
+        console.log('Número do hotel clicado:', typeNumberHotel)
+    }
     return (
         <div className="flex bg-[#2D3648]">
             <div className="flex h-full w-[300px] flex-col bg-[#2D3648] text-white">
@@ -431,7 +435,10 @@ export default function TopLeftSidebar(props: dataInfo) {
                             {travelAvailable?.map((m, i) => (
                                 <div
                                     className="mx-auto w-fit cursor-pointer transition delay-0 duration-200 ease-in-out hover:-translate-y-1 hover:scale-105"
-                                    onClick={() => handleClickCard(m.id)}
+                                    onClick={() => {
+                                        handleClickCard(m.id)
+                                        handleClickTypeHotel(m.typeNumberHotel)
+                                    }}
                                     key={i}
                                 >
                                     <CardTravel
@@ -454,9 +461,17 @@ export default function TopLeftSidebar(props: dataInfo) {
                             <AlertDialog open={isDialogOpen}>
                                 <AlertDialogContent>
                                     <AlertDialogHeader>
-                                        <AlertDialogTitle className="mb-4 text-2xl">
-                                            Informações gerais da Viagem
-                                        </AlertDialogTitle>
+                                        <div className="flex justify-between">
+                                            <AlertDialogTitle className="mb-4 text-2xl">
+                                                Informações gerais da Viagem
+                                            </AlertDialogTitle>
+                                            <X
+                                                onClick={handleCloseInfoDiv}
+                                                size={40}
+                                                color="red"
+                                                className="cursor-pointer hover:opacity-70"
+                                            />
+                                        </div>
                                         <AlertDialogDescription>
                                             {filteredTravelAvailable?.map(
                                                 (m) => (
@@ -484,19 +499,31 @@ export default function TopLeftSidebar(props: dataInfo) {
                                                             m.rocketName
                                                         }
                                                         capacity={m.capacity}
+                                                        typeNumberHotel={
+                                                            m.typeNumberHotel
+                                                        }
                                                     />
                                                 )
                                             )}
                                         </AlertDialogDescription>
                                     </AlertDialogHeader>
-                                    <AlertDialogFooter>
+                                    <AlertDialogFooter className="flex justify-between">
                                         <AlertDialogCancel
+                                            className="bg-[#FF5252] text-white hover:bg-[#b84040] hover:text-white"
                                             onClick={handleCloseInfoDiv}
                                         >
-                                            Cancel
+                                            <CornerDownLeft
+                                                className="mr-2"
+                                                size={18}
+                                            />
+                                            Voltar
                                         </AlertDialogCancel>
-                                        <AlertDialogAction>
-                                            Continue
+                                        <AlertDialogAction className="bg-[#2EDB4B] hover:bg-[#3b9a4b]">
+                                            Prosseguir para Compra
+                                            <DollarSign
+                                                className="ml-2"
+                                                size={18}
+                                            />
                                         </AlertDialogAction>
                                     </AlertDialogFooter>
                                 </AlertDialogContent>
