@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import HotelWeylandYutani1 from '../../public/hotel_weyland_yutani/Hotel_Weyland_Yutani_1.jpg'
 import HotelWeylandYutani2 from '../../public/hotel_weyland_yutani/Hotel_Weyland_Yutani_2.jpg'

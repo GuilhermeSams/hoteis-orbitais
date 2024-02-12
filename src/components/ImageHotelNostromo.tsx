@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import HotelNostromo1 from '../../public/hotel_nostromo/Hotel_Nostromo_1.jpg'
 import HotelNostromo2 from '../../public/hotel_nostromo/Hotel_Nostromo_2.jpg'

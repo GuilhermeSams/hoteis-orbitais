@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import suiteHotelSignus from '../../public/hotel_signus/suite_Hotel_Signus.jpg'
 import salaEstarHotelSignus from '../../public/hotel_signus/sala_estar_hotel_signus.jpg'
