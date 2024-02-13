@@ -16,9 +16,17 @@ export default function Navbar() {
 
     useEffect(() => {
         const newColor =
-            router.pathname === '/reserve' ? 'text-black' : 'text-white'
+            router.pathname === '/reserve'
+                ? 'text-black'
+                : 'text-white' && router.pathname === '/purchase'
+                ? 'text-black'
+                : 'text-white'
         const newColorLine =
-            router.pathname === '/reserve' ? 'after:bg-black' : 'after:bg-white'
+            router.pathname === '/reserve'
+                ? 'after:bg-black'
+                : 'after:bg-white' && router.pathname === '/purchase'
+                ? 'after:bg-black'
+                : 'after:bg-white'
         setLineDownColor(newColorLine)
 
         setTextColor(newColor)

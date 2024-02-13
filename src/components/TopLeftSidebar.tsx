@@ -3,6 +3,7 @@ import CardTravel from './CardTravel'
 import CardModalTravel from './CardModalTravel'
 import { useState, useEffect } from 'react'
 import { X, CornerDownLeft, DollarSign } from 'lucide-react'
+import Link from 'next/link'
 
 import {
     AlertDialog,
@@ -518,13 +519,15 @@ export default function TopLeftSidebar(props: dataInfo) {
                                             />
                                             Voltar
                                         </AlertDialogCancel>
-                                        <AlertDialogAction className="bg-[#2EDB4B] hover:bg-[#3b9a4b]">
-                                            Prosseguir para Compra
-                                            <DollarSign
-                                                className="ml-2"
-                                                size={18}
-                                            />
-                                        </AlertDialogAction>
+                                        <Link href={'purchase'}>
+                                            <AlertDialogAction className="bg-[#2EDB4B] hover:bg-[#3b9a4b]">
+                                                Prosseguir para Compra
+                                                <DollarSign
+                                                    className="ml-2"
+                                                    size={18}
+                                                />
+                                            </AlertDialogAction>
+                                        </Link>
                                     </AlertDialogFooter>
                                 </AlertDialogContent>
                             </AlertDialog>
