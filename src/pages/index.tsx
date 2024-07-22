@@ -43,11 +43,23 @@ export default function Home() {
             </Head>
             <div className="-mt-[6rem] h-full">
                 <section className="relative h-screen shadow-[0px_42px_52px_7px_#000000]">
-                    <div className="absolute z-[-1] h-screen w-screen max-w-full">
+                    <div className="absolute z-[-1] h-screen w-screen max-w-full bg-black">
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            className="mt-24 w-screen max-[740px]:hidden"
+                        >
+                            <source
+                                src="assets/hotel-space.mp4"
+                                type="video/mp4"
+                            />
+                        </video>
                         <Image
                             alt="img_rocket"
                             src={img_banner}
                             quality={100}
+                            className="min-[740px]:hidden"
                             fill
                             priority={true}
                             style={{
